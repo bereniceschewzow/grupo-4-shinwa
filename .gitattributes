@@ -1,16 +1,19 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 index.html
+<!Doctype html>
 <html>
-<!doctype html>
 <html LANG=es>
 <head>
-<meta charset="UTF-8">
-<title> 
-shinwa 
-</title>
-</head>
+<meta charset="utf-8">
 <body>
-<header> 
-introducción 
+<header>
+<h1>shinwa</h1>
 </header>
+<main>
+<h4>introducción</h4>
+<p>este es un parrafo</p>
+<footer>
+<p>pie</p>
+</body>
+</html>
