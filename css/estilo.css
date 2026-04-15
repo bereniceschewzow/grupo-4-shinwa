@@ -29,8 +29,10 @@ p {
   font-weight: 400;
 }
 
-a {
+h1 a {
+  color: inherit;
+  text-decoration: none;
   font-weight: inherit;
-  text-decoration: none; /* opcional, saca el subrayado */
-  color: inherit; /* opcional, mantiene el color del texto */
+  font-size: inherit;
+  font-family: inherit;
 }
