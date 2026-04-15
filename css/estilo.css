@@ -28,3 +28,9 @@ h1, h2, h3 {
 p {
   font-weight: 400;
 }
+
+a {
+  font-weight: inherit;
+  text-decoration: none; /* opcional, saca el subrayado */
+  color: inherit; /* opcional, mantiene el color del texto */
+}
