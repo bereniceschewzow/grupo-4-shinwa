@@ -1,9 +1,5 @@
-/* =============================================
-   SHINWA — Mitología Japonesa
-   CSS Responsive — Mobile First
-   ============================================= */
 
-/* ── Variables ── */
+
 :root {
   --rojo:        #8B1A1A;
   --rojo-oscuro: #6B1212;
@@ -18,7 +14,7 @@
   --padding-h:   20px;
 }
 
-/* ── Reset ── */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -52,9 +48,7 @@ a {
   color: inherit;
 }
 
-/* =============================================
-   HEADER
-   ============================================= */
+
 
 header {
   position: sticky;
@@ -72,7 +66,7 @@ header .logo {
   width: 120px;
 }
 
-/* Navegación escritorio — oculta en mobile */
+
 header nav {
   display: none;
 }
@@ -111,9 +105,7 @@ header menu button {
   padding: 0;
 }
 
-/* =============================================
-   HERO
-   ============================================= */
+
 
 .hero {
   position: relative;
@@ -121,7 +113,7 @@ header menu button {
   background: var(--blanco);
 }
 
-/* Imagen hero — ocupa todo el ancho */
+
 .hero > img {
   width: 100%;
   height: 70vw;
@@ -130,7 +122,6 @@ header menu button {
   object-position: center top;
 }
 
-/* Tagline superpuesta sobre la imagen */
 .hero > p {
   position: absolute;
   top: 30%;
@@ -145,7 +136,7 @@ header menu button {
   color: var(--negro);
 }
 
-/* Barra de búsqueda */
+
 .hero search {
   display: flex;
   flex-direction: column;
@@ -173,7 +164,6 @@ header menu button {
   border-bottom-color: var(--rojo);
 }
 
-/* Aside introducción */
 .hero aside {
   margin: 24px var(--padding-h);
   background: var(--beige);
@@ -200,9 +190,7 @@ header menu button {
   margin-bottom: 0;
 }
 
-/* =============================================
-   SECCIÓN DIOSES
-   ============================================= */
+
 
 .seccion-dioses {
   padding: 40px var(--padding-h);
@@ -241,7 +229,7 @@ header menu button {
   line-height: 1.7;
 }
 
-/* Grid de dioses — 2 columnas mobile */
+
 .seccion-dioses ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -268,7 +256,7 @@ header menu button {
   transform: scale(1.04);
 }
 
-/* Texto sobre la imagen */
+
 .seccion-dioses li h3,
 .seccion-dioses li p {
   position: absolute;
@@ -290,9 +278,7 @@ header menu button {
   font-weight: 500;
 }
 
-/* =============================================
-   SECCIÓN CRIATURAS
-   ============================================= */
+
 
 .seccion-criaturas {
   padding: 40px var(--padding-h);
@@ -340,9 +326,6 @@ header menu button {
   line-height: 1.6;
 }
 
-/* =============================================
-   SECCIÓN MITOS
-   ============================================= */
 
 .seccion-mitos {
   padding: 40px var(--padding-h);
@@ -377,14 +360,11 @@ header menu button {
   line-height: 1.7;
 }
 
-/* Texto vertical japonés al lado de la imagen */
 .seccion-mitos article {
   position: relative;
 }
 
-/* =============================================
-   SECCIÓN MAPA
-   ============================================= */
+
 
 .seccion-mapa {
   padding: 40px var(--padding-h);
@@ -392,8 +372,8 @@ header menu button {
 }
 
 .seccion-mapa > img {
-  width: 100%;
-  max-width: 400px;
+  width: 50%;
+  max-width: 200px;
   border: 2px solid var(--rojo);
   border-radius: var(--radio);
   margin: 24px 0;
@@ -419,7 +399,6 @@ header menu button {
   color: var(--gris-texto);
 }
 
-/* Layout mapa en tablet+ */
 @media (min-width: 640px) {
   .seccion-mapa {
     display: grid;
@@ -453,9 +432,7 @@ header menu button {
   }
 }
 
-/* =============================================
-   SECCIÓN QUIZ
-   ============================================= */
+
 
 .seccion-quiz {
   margin: 20px var(--padding-h) 40px;
@@ -496,9 +473,7 @@ header menu button {
   text-transform: uppercase;
 }
 
-/* =============================================
-   FOOTER
-   ============================================= */
+
 
 footer {
   background: var(--negro);
@@ -506,7 +481,7 @@ footer {
   padding: 0;
 }
 
-/* Redes sociales — barra roja */
+
 .footer-redes {
   display: flex;
   justify-content: center;
@@ -533,7 +508,7 @@ footer {
   filter: brightness(0) invert(1);
 }
 
-/* Cuerpo del footer */
+
 footer > .logo {
   margin: 32px var(--padding-h) 16px;
   filter: brightness(0) invert(1);
@@ -549,7 +524,6 @@ footer > p {
   margin-bottom: 32px;
 }
 
-/* Nav explorar */
 footer nav {
   padding: 0 var(--padding-h);
   margin-bottom: 32px;
@@ -578,7 +552,7 @@ footer nav ul li a:hover {
   color: var(--blanco);
 }
 
-/* Acerca de */
+
 footer section {
   padding: 0 var(--padding-h);
   margin-bottom: 32px;
@@ -598,7 +572,6 @@ footer section p {
   max-width: 340px;
 }
 
-/* Imagen bonsai decorativa */
 footer > img:last-of-type {
   width: 100%;
   max-width: 300px;
@@ -606,7 +579,7 @@ footer > img:last-of-type {
   opacity: 0.25;
 }
 
-/* Legal */
+
 .footer-legal {
   display: flex;
   flex-wrap: wrap;
@@ -625,9 +598,7 @@ footer > img:last-of-type {
   color: var(--blanco);
 }
 
-/* =============================================
-   RESPONSIVE — TABLET (640px+)
-   ============================================= */
+
 
 @media (min-width: 640px) {
   :root {
@@ -688,9 +659,7 @@ footer > img:last-of-type {
   }
 }
 
-/* =============================================
-   RESPONSIVE — DESKTOP (1024px+)
-   ============================================= */
+
 
 @media (min-width: 1024px) {
   :root {
@@ -785,7 +754,7 @@ footer > img:last-of-type {
     margin: 0;
   }
 
-  /* Limpieza del float */
+
   .hero::after {
     content: '';
     display: table;
@@ -843,9 +812,7 @@ footer > img:last-of-type {
   }
 }
 
-/* =============================================
-   RESPONSIVE — WIDESCREEN (1280px+)
-   ============================================= */
+
 
 @media (min-width: 1280px) {
   :root {
@@ -869,9 +836,7 @@ footer > img:last-of-type {
   }
 }
 
-/* =============================================
-   UTILIDADES Y ANIMACIONES
-   ============================================= */
+
 
 /* Transición suave en hover para cards */
 .seccion-dioses li,
