@@ -485,7 +485,8 @@ footer {
 display: flex;
   justify-content: center;
   gap: 24px;
-  flex-wrap: wrap;  
+  flex-wrap: wrap; 
+  color: var(--beige-claro);
 }
 .footer-redes {
   display: flex;
