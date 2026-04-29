@@ -1,7 +1,8 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 .hero {
   background-image: url 'pagprincipal.png';
-  background-size: cover;      /* cubre todo el contenedor */
-  background-position: center; /* centra la imagen */
+  background-size: cover;      
+  background-position: center; 
   background-repeat: no-repeat;
 }
 ul, li {
