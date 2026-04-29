@@ -1,27 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-.hero {
-  background-image: url 'img/pagprincipal1.png';
-  background-size: cover;      
-  background-position: center; 
-  background-repeat: no-repeat;
-}
-ul, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
-li {
-  list-style: none;
-}
-
-img {
-    border-radius: 10px;
-}
-
-.mismo-fondo {
-  background-color: lightblue;
-}
 
 body {
   font-family: 'Montserrat', sans-serif;
