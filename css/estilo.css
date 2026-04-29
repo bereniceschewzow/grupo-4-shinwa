@@ -481,7 +481,12 @@ footer {
   padding: 0;
 }
 
-
+.logo-footer {
+display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;  
+}
 .footer-redes {
   display: flex;
   justify-content: center;
