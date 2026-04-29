@@ -1,4 +1,9 @@
-
+.hero {
+  background-image: url 'pagprincipal.png';
+  background-size: cover;      /* cubre todo el contenedor */
+  background-position: center; /* centra la imagen */
+  background-repeat: no-repeat;
+}
 ul, li {
   list-style: none;
   margin: 0;
