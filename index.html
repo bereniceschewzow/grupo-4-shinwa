@@ -5,113 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Shinwa - Mitología Japonesa</title>
     <link rel="stylesheet" href="css/estilo.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <header>
-   <img src="img/weblogo.png"alt="Shinwa logo" width="200">
-
+    <a href="index.html">
+        <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+    </a>
     <nav>
         <ul>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="dioses.html">Dioses principales</a></li>
             <li><a href="criaturas.html">Criaturas míticas</a></li>
             <li><a href="mitos.html">Mitos y relatos</a></li>
-            <li><a href="mapa.html">Mapa mitológico</a></li>
-            <li><a href="quiz.html">Quiz mitológico</a></li>
+            <li><a href="mapa.html">Mapa</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
         </ul>
     </nav>
+    <menu>
+        <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.svg" alt="Buscar"></a></li>
+        <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.svg" alt="Usuario"></a></li>
+        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.svg" alt="Menú"></button></li>
+    </menu>
 </header>
 
 <main>
 
-<section>
-    <h2>Explorá el mundo de la mitología japonesa</h2>
-    <p>Dioses, espíritus y criaturas que habitan entre la naturaleza y lo invisible.</p>
-
-    <h3>Introducción a la mitología japonesa</h3>
-    <p>
-        La mitología japonesa reúne relatos y creencias que explican el origen del mundo, 
-        la naturaleza y la vida humana.
-    </p>
-</section>
-<img src="img/pagprincipal.png"alt="Imagen principal" width="500">
-
-    <h2><a href="dioses.html"> Dioses principales</a></h2> 
-    <ul>
-        <li><h5>Amaterasu</h5><img src="img/1dios1-8.png" alt="amaterasu" width="300"></li> 
-        <li><h5>Tsukuyomi</h5><img src="img/2dios2-8.png" alt="tsukuyomi" width="300"></li>
-        <li><h5>Susanoo</h5> <img src="img/3dios3-8.png" alt="Susanoo" width="300"></li>
-        <li><h5>Izanami</h5> <img src="img/4dios4-8.png" alt="Izanami" width="300"></li>
-    </ul>
-</section>
-
-    <h2><a href="criaturas.html"> Criaturas Míticas</a></h2>
-
-    <ul>
-        <li><h5>Kitsune</h5> <img src="img/1criatura1-8.png" alt="Kitsune" width="300"></li>
-        <li><h5>Tengu</h5> <img src="img/2criatura2-8.png" alt="Tengu" width="300"></li>
-        <li><h5>Ryū</h5> <img src="img/3criatura3-8.png" alt="Ryu" width="300"></li> 
-        <li><h5>Kappa</h5> <img src="img/4criatura4-8.png" alt="Kappa" width="300"></li>
-    </ul>
-
-   
-</section>
-
-    <h2><a href="mitos.html"> Mitos y relatos</a></h2>
-
-    <section>
-        <h3>Izanagi e Izanami</h3>
-    
-         <img src="img/1mitosrelatos1-8.png" alt="izanagi e izanami" width="300">
+    <section class="hero">
+        <img src="img/pagprincipal.png" alt="Imagen principal mitología japonesa">
+        <p>Dioses, espíritus y criaturas que habitan entre la naturaleza y lo invisible.</p>
+        <search>
+            <label for="buscador">Explora el mundo de la mitología japonesa</label>
+            <input type="search" id="buscador" name="buscador">
+        </search>
+        <aside>
+            <h2>Introducción a la mitología japonesa</h2>
+            <p>La mitología japonesa reúne relatos y creencias que explican el origen del mundo, la naturaleza y la vida humana.</p>
+            <p>A través de los kami, espíritus que habitan en todas las cosas, se construye una visión donde lo divino y lo cotidiano conviven constantemente.</p>
+            <p>Estas historias no solo narran hechos míticos, sino que también transmiten valores, emociones y formas de entender la realidad.</p>
+        </aside>
     </section>
 
-    <section>
-        <h3>Susanoo y la serpiente</h3>
-        
-         <img src="img/2mitosrelatos2-8.png" alt="Susanoo" width="300">
+    <section class="seccion-dioses">
+        <h2><a href="dioses.html">Dioses principales</a></h2>
+        <p>Los dioses principales de la mitología japonesa, conocidos como kami, representan fuerzas de la naturaleza y aspectos fundamentales de la vida.</p>
+        <ul>
+            <li>
+                <img src="img/1dios1-8.png" alt="Amaterasu">
+                <h3>天照大神</h3>
+                <p>[Amaterasu]</p>
+            </li>
+            <li>
+                <img src="img/3dios3-8.png" alt="Susanoo">
+                <h3>須佐之男命</h3>
+                <p>[Susanoo]</p>
+            </li>
+            <li>
+                <img src="img/4dios4-8.png" alt="Izanami">
+                <h3>伊邪那美命</h3>
+                <p>[Izanami]</p>
+            </li>
+            <li>
+                <img src="img/2dios2-8.png" alt="Tsukuyomi">
+                <h3>月読命</h3>
+                <p>[Tsukuyomi]</p>
+            </li>
+        </ul>
     </section>
-</section>
 
-    <h2><a href="mapa.html"> Mapa Mitológico</a></h2>
-<img src="img/1mapa-8.png" alt="mapa" width="400">
-    <section>
-        <h3>Kono Sekai</h3>
-       
-        <p>Mundo de los humanos.</p>
+    <section class="seccion-criaturas">
+        <h2><a href="criaturas.html">Criaturas míticas</a></h2>
+        <ul>
+            <li>
+                <img src="img/1criatura1-8.png" alt="Kitsune">
+                <h3>[Kitsune]</h3>
+                <p>Los kitsune son zorros mágicos del folclore japonés conocidos por su gran inteligencia y habilidades sobrenaturales.</p>
+            </li>
+            <li>
+                <img src="img/2criatura2-8.png" alt="Tengu">
+                <h3>[Tengu]</h3>
+                <p>Los tengu son criaturas sobrenaturales asociadas a las montañas y los bosques, y se representan como seres humanoides.</p>
+            </li>
+            <li>
+                <img src="img/3criatura3-8.png" alt="Ryū">
+                <h3>[Ryū]</h3>
+                <p>Ryū es un poderoso dios dragón del mar en la mitología japonesa, considerado el gobernante de los océanos.</p>
+            </li>
+            <li>
+                <img src="img/4criatura4-8.png" alt="Kappa">
+                <h3>[Kappa]</h3>
+                <p>Criatura acuática del folclore japonés que vive en ríos y lagos, tiene apariencia humanoide con rasgos de tortuga y es conocida por ser traviesa.</p>
+            </li>
+        </ul>
     </section>
 
-    <section>
-        <h3>Takamagahara</h3>
-        
-        <p>Reino celestial de los dioses.</p>
+    <section class="seccion-mitos">
+        <h2><a href="mitos.html">Mitos y relatos</a></h2>
+        <article>
+            <img src="img/1mitosrelatos1-8.png" alt="Izanagi e Izanami">
+            <h3>Izanagi - Izanami</h3>
+            <p>Izanagi y Izanami crearon las islas de Japón y muchos dioses. Izanami murió al dar a luz al dios del fuego y fue al inframundo Yomi. Izanagi intentó traerla de regreso, pero al verla transformada por la muerte escapó. Al purificarse después del viaje nacieron nuevos dioses, entre ellos Amaterasu.</p>
+        </article>
+        <article>
+            <img src="img/2mitosrelatos2-8.png" alt="Susanoo y la serpiente">
+            <h3>Susanoo y la serpiente</h3>
+            <p>El dios de las tormentas Susanoo salvó a una joven de la serpiente gigante Yamata no Orochi. Para vencerla, la emborrachó con sake y luego la derrotó con su espada. Dentro del cuerpo del monstruo encontró una espada sagrada que se convirtió en un tesoro legendario de Japón.</p>
+        </article>
     </section>
 
-    <section>
-        <h3>Yomi</h3>
-        
-        <p>Reino de los muertos.</p>
+    <section class="seccion-mapa">
+        <h2><a href="mapa.html">Mapa mitológico</a></h2>
+        <img src="img/1mapa-8.png" alt="Mapa mitológico japonés">
+        <article>
+            <h3>Takamagahara</h3>
+            <p>Reino celestial de los dioses.</p>
+        </article>
+        <article>
+            <h3>Kono Sekai</h3>
+            <p>Mundo de los humanos.</p>
+        </article>
+        <article>
+            <h3>Yomi</h3>
+            <p>Reino de los muertos.</p>
+        </article>
     </section>
 
-
-<section id="quiz">
-   
-    <h4><a href="quiz.html">Quiz mitológico</a></h4>
-
-</section>
+    <section class="seccion-quiz">
+        <a href="quiz.html">
+            <p class="quiz-kanji">神話クイズ</p>
+            <p>[QUIZ MITOLOGICO]</p>
+        </a>
+    </section>
 
 </main>
 
 <footer>
-    <ul>
-    <li>Aviso Legal  </li>
-    <li>Política de cookies </li> 
-    <li>Términos y condiciones</li>
+    <ul class="footer-redes">
+        <li><a href="#" aria-label="Instagram"><img src="img/icono-instagram.svg" alt="Instagram"></a></li>
+        <li><a href="#" aria-label="Facebook"><img src="img/icono-facebook.svg" alt="Facebook"></a></li>
+        <li><a href="#" aria-label="Pinterest"><img src="img/icono-pinterest.svg" alt="Pinterest"></a></li>
+        <li><a href="#" aria-label="Behance"><img src="img/icono-behance.svg" alt="Behance"></a></li>
+        <li><a href="#" aria-label="Spotify"><img src="img/icono-spotify.svg" alt="Spotify"></a></li>
+        <li><a href="#" aria-label="WhatsApp"><img src="img/icono-whatsapp.svg" alt="WhatsApp"></a></li>
+        <li><a href="#" aria-label="YouTube"><img src="img/icono-youtube.svg" alt="YouTube"></a></li>
     </ul>
+    <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+    <p>Una enciclopedia digital dedicada a la mitología japonesa, donde se ofrece una mirada clara y accesible la riqueza cultural y espiritual de Japón.</p>
+    <nav>
+        <h4>Explorar</h4>
+        <ul>
+            <li><a href="#">Origen del mundo</a></li>
+            <li><a href="#">Leyendas de Kitsune</a></li>
+            <li><a href="#">Espíritus y demonios</a></li>
+            <li><a href="#">Personajes destacados</a></li>
+            <li><a href="#">Curiosidades</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h4>Acerca de</h4>
+        <p>Esta página fue creada con el objetivo de acercar sus historias, dioses y criaturas a todo tipo de público. Este espacio busca informar y despertar la curiosidad por un mundo lleno de simbolismo y misterio.</p>
+    </section>
+    <img src="img/bonsai.png" alt="Bonsai decorativo">
+    <ul class="footer-legal">
+        <li><a href="#">Aviso Legal</a></li>
+        <li><a href="#">Política de cookies</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+    </ul>
+   
 </footer>
 
 </body>
