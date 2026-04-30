@@ -2,15 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mitos y relatos - Shinwa</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <header>
-    <img src="img/weblogo.png"alt="Shinwa logo" width="200">
-
+    <a href="index.html">
+        <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+    </a>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -21,81 +25,88 @@
             <li><a href="quiz.html">Quiz mitológico</a></li>
         </ul>
     </nav>
+    <menu>
+        <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.png" alt="Buscar"></a></li>
+        <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.png" alt="Usuario"></a></li>
+        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.png" alt="Menú"></button></li>
+    </menu>
 </header>
 
-<main>
+<main class="mitos-main">
 
-<section>
-    <h2>Mitos y relatos</h2>
+    <h1 class="mitos-titulo">Mitos y relatos</h1>
 
-    <p>
-Los mitos japoneses explican el origen del mundo, la creación de los dioses 
-y las historias heroicas del shinto.
-    </p>
-</section>
+    <div class="mitos-grid">
 
-<section>
+        <!-- Card 1: Susanoo — imagen sale por la izquierda -->
+        <article class="mito-card">
+            <span class="mito-kanji" aria-hidden="true">イザナナミ</span>
+            <div class="mito-inner">
+                <div class="mito-circulo">
+                    <img src="img/serpiente.png" alt="Susanoo y la serpiente">
+                </div>
+                <div class="mito-contenido">
+                    <h2 class="mito-nombre">Susanoo y la serpiente</h2>
+                    <p>Susanoo, dios de las tormentas, salvó a una joven de la serpiente gigante Yamata no Orochi.</p>
+                    <p>Para derrotarla, la emborrachó con sake y luego la venció con su espada.</p>
+                    <p>Dentro del cuerpo del monstruo encontró una espada sagrada, uno de los tesoros más importantes de Japón.</p>
+                </div>
+            </div>
+        </article>
 
-    <article>
-        <h3>Izanagi e Izanami</h3>
-<img src= "img/izanagi iza dos.png" alt="Izanagi e Izanami" width="300">
+        <!-- Card 2: Izanagi — imagen sale por la derecha -->
+        <article class="mito-card mito-card--invertida">
+            <div class="mito-inner">
+                <div class="mito-contenido">
+                    <h2 class="mito-nombre">Izanagi - Izanaki</h2>
+                    <p>Izanagi e Izanami fueron los dioses creadores que dieron origen a las islas de Japón y a muchos otros dioses.</p>
+                    <p>Tras la muerte de Izanami al dar a luz al dios del fuego, descendió al inframundo llamado Yomi.</p>
+                    <p>Izanagi intentó rescatarla, pero al verla transformada por la muerte escapó y realizó un ritual de purificación.</p>
+                </div>
+                <div class="mito-circulo">
+                    <img src="img/izanagi iza dos.png" alt="Izanagi e Izanami">
+                </div>
+            </div>
+            <span class="mito-kanji" aria-hidden="true">スサノオとヤマタノオロチ</span>
+        </article>
 
-        
-        <p>
-Izanagi e Izanami fueron
-los dioses creadores que
-dieron origen a las islas de
-Japón y a muchos otros
-dioses.
-        </p>
-        <p>
-Tras la muerte de Izanami
-al dar a luz al dios del
-fuego, descendió al
-inframundo llamado Yomi.
-Izanagi intentó rescatarla,
-pero al verla transformada
-por la muerte escapó y
-realizó un ritual de
-purificación.
-        </p>
-    </article>
-
-    <article>
-        <h3>Susanoo y Yamata no Orochi</h3>
-
-<img src= "img/serpiente.png" alt="Susanoo" width="300">
-
-  <p>
-Susanoo, dios de las
-tormentas, salvó a una
-joven de la serpiente
-gigante Yamata no
-Orochi.
-  </p>
-  <p>
-Para derrotarla, la
-emborrachó con sake y
-luego la venció con su
-espada.
-Dentro del cuerpo del
-monstruo encontró una
-espada sagrada, uno de
-los tesoros más
-importantes de Japón.
-  </p>
-    </article>
-
-</section>
+    </div>
 
 </main>
 
 <footer>
-    <p><a href="index.html"> Volver al inicio</a></p>
-     <ul>
-    <li>Aviso Legal | </li>
-    <li>Política de cookies |</li> 
-    <li>Términos y condiciones</li>
+    <ul class="footer-redes">
+        <li><a href="#" aria-label="Instagram"><img src="img/icono-instagram.svg" alt="Instagram"></a></li>
+        <li><a href="#" aria-label="Facebook"><img src="img/icono-facebook.svg" alt="Facebook"></a></li>
+        <li><a href="#" aria-label="YouTube"><img src="img/icono-youtube.svg" alt="YouTube"></a></li>
+    </ul>
+    <div class="footer-cuerpo">
+        <div class="footer-info">
+            <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+            <p>Una enciclopedia digital dedicada a la mitología japonesa, donde se ofrece una mirada clara y accesible la riqueza cultural y espiritual de Japón.</p>
+            <nav>
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#">Origen del mundo</a></li>
+                    <li><a href="#">Leyendas de Kitsune</a></li>
+                    <li><a href="#">Espíritus y demonios</a></li>
+                    <li><a href="#">Personajes destacados</a></li>
+                    <li><a href="#">Curiosidades</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-acerca">
+            <section>
+                <h4>Acerca de</h4>
+                <p>Esta página fue creada con el objetivo de acercar sus historias, dioses y criaturas a todo tipo de público. Este espacio busca informar y despertar la curiosidad por un mundo lleno de simbolismo y misterio.</p>
+            </section>
+            <img src="img/bonsai.png" alt="Bonsai decorativo" class="footer-bonsai">
+        </div>
+    </div>
+    <ul class="footer-legal">
+        <li><a href="#">Aviso Legal</a></li>
+        <li><a href="#">Política de cookies</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
     </ul>
 </footer>
 
