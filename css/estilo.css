@@ -1535,3 +1535,228 @@ input:focus-visible {
     font-size: 9px;
   }
 }
+
+/* =============================================
+   PÁGINA MITOS — mitos.html
+   ============================================= */
+
+.mitos-main {
+  padding: 0 0 80px;
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ── Título ── */
+.mitos-titulo {
+  font-size: clamp(28px, 7vw, 52px);
+  font-weight: 700;
+  color: var(--negro);
+  padding: 40px var(--padding-h) 40px;
+  line-height: 1.1;
+  text-align: left;
+}
+
+/* ── Grid: mobile = columna, desktop = 2 col ── */
+.mitos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding: 0 var(--padding-h);
+}
+
+/* ── Card ──
+   Posición relativa para anclar el kanji y el círculo
+*/
+.mito-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* Kanji vertical negro a la izquierda de la card normal */
+.mito-kanji {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: clamp(14px, 3.5vw, 20px);
+  font-weight: 700;
+  color: var(--negro);
+  letter-spacing: 4px;
+  line-height: 1;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 4px 6px 0 0;
+  white-space: nowrap;
+}
+
+/* Card invertida: kanji va a la derecha */
+.mito-card--invertida {
+  flex-direction: row;
+}
+
+.mito-card--invertida .mito-kanji {
+  order: 2;
+  padding: 4px 0 0 6px;
+  align-self: flex-end;
+}
+
+/* ── Inner: caja roja con imagen sobresaliendo ── */
+.mito-inner {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--rojo);
+  border-radius: 20px;
+  overflow: visible; /* permite que el círculo sobresalga */
+  min-height: 280px;
+}
+
+/* ── Círculo con imagen ── */
+.mito-circulo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--beige);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  /* Sobresale hacia la izquierda */
+  margin-left: -60px;
+  margin-right: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.20);
+}
+
+.mito-circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card invertida: círculo sale por la derecha */
+.mito-card--invertida .mito-inner {
+  flex-direction: row-reverse;
+}
+
+.mito-card--invertida .mito-circulo {
+  margin-left: 0;
+  margin-right: -60px;
+}
+
+/* ── Contenido de texto dentro de la card ── */
+.mito-contenido {
+  flex: 1;
+  padding: 28px 28px 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: right; /* texto alineado a la derecha en card normal */
+}
+
+.mito-card--invertida .mito-contenido {
+  text-align: left;
+  padding: 28px 20px 28px 28px;
+}
+
+.mito-nombre {
+  font-size: clamp(16px, 4vw, 22px);
+  font-weight: 700;
+  color: var(--blanco);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.mito-contenido p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.7;
+}
+
+/* ── TABLET (640px+): círculos más grandes ── */
+@media (min-width: 640px) {
+  .mito-circulo {
+    width: 240px;
+    height: 240px;
+    margin-left: -70px;
+  }
+
+  .mito-card--invertida .mito-circulo {
+    margin-left: 0;
+    margin-right: -70px;
+  }
+
+  .mito-contenido p {
+    font-size: 13px;
+  }
+
+  .mitos-grid {
+    gap: 64px;
+  }
+}
+
+/* ── DESKTOP (1024px+): 2 columnas lado a lado ── */
+@media (min-width: 1024px) {
+  .mitos-titulo {
+    text-align: center;
+    padding: 56px 60px 48px;
+  }
+
+  .mitos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 0 60px;
+    align-items: start;
+  }
+
+  .mito-card {
+    flex-direction: row;
+  }
+
+  /* En desktop la card normal: kanji izq + inner */
+  .mito-card .mito-kanji {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+
+  .mito-card--invertida .mito-kanji {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+
+  .mito-inner {
+    min-height: 340px;
+  }
+
+  .mito-circulo {
+    width: 220px;
+    height: 220px;
+    margin-left: -65px;
+  }
+
+  .mito-card--invertida .mito-circulo {
+    margin-left: 0;
+    margin-right: -65px;
+  }
+
+  .mito-contenido {
+    padding: 32px 32px 32px 20px;
+    gap: 14px;
+  }
+
+  .mito-card--invertida .mito-contenido {
+    padding: 32px 20px 32px 32px;
+  }
+
+  .mito-nombre {
+    font-size: 22px;
+  }
+
+  .mito-contenido p {
+    font-size: 13px;
+  }
+}
