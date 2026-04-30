@@ -501,8 +501,8 @@ header menu button {
    ============================================= */
 
 footer {
-  background: var(--negro);
-  color: var(--blanco);
+  background: var(--beige);
+  color: var(--negro);
   padding: 0;
 }
 
@@ -542,14 +542,14 @@ footer {
 }
 
 .footer-info .logo {
-  filter: brightness(0) invert(1);
+  filter: none;
   width: 110px;
   margin-bottom: 16px;
 }
 
 .footer-info > p {
   font-size: 12px;
-  color: rgba(255,255,255,0.65);
+  color: var(--gris-texto);
   max-width: 340px;
   line-height: 1.7;
   margin-bottom: 28px;
@@ -563,7 +563,7 @@ footer nav {
 footer nav h4 {
   font-size: 22px;
   font-weight: 700;
-  color: var(--blanco);
+  color: var(--negro);
   margin-bottom: 14px;
 }
 
@@ -575,12 +575,12 @@ footer nav ul {
 
 footer nav ul li a {
   font-size: 13px;
-  color: rgba(255,255,255,0.75);
+  color: var(--gris-texto);
   transition: color 0.2s;
 }
 
 footer nav ul li a:hover {
-  color: var(--blanco);
+  color: var(--negro);
 }
 
 /* Acerca de */
@@ -591,13 +591,13 @@ footer section {
 footer section h4 {
   font-size: 22px;
   font-weight: 700;
-  color: var(--blanco);
+  color: var(--negro);
   margin-bottom: 12px;
 }
 
 footer section p {
   font-size: 12px;
-  color: rgba(255,255,255,0.65);
+  color: var(--gris-texto);
   line-height: 1.7;
   max-width: 340px;
 }
@@ -606,7 +606,7 @@ footer section p {
 .footer-bonsai {
   width: 100%;
   max-width: 280px;
-  opacity: 0.20;
+  opacity: 0.30;
   margin-top: 8px;
 }
 
@@ -616,17 +616,17 @@ footer section p {
   flex-wrap: wrap;
   gap: 12px 20px;
   padding: 20px var(--padding-h);
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(0,0,0,0.12);
 }
 
 .footer-legal li a {
   font-size: 11px;
-  color: rgba(255,255,255,0.5);
+  color: var(--gris-texto);
   transition: color 0.2s;
 }
 
 .footer-legal li a:hover {
-  color: var(--blanco);
+  color: var(--negro);
 }
 
 /* =============================================
@@ -913,27 +913,28 @@ input:focus-visible {
    PÁGINA DIOSES — dioses.html
    ============================================= */
 
-/* Intro con fondo beige redondeado */
+/* ── Intro: título + subtítulo centrados ── */
 .dioses-intro {
-  margin: 32px var(--padding-h);
-  background: var(--beige);
-  border-radius: 20px;
-  padding: 28px 24px;
+  text-align: center;
+  padding: 48px var(--padding-h) 32px;
+  max-width: var(--max-ancho);
+  margin: 0 auto;
 }
 
 .dioses-intro h1 {
-  font-size: clamp(28px, 8vw, 48px);
+  font-size: clamp(32px, 7vw, 56px);
   font-weight: 700;
   color: var(--negro);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   line-height: 1.1;
 }
 
 .dioses-intro p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--gris-texto);
   line-height: 1.7;
-  max-width: 560px;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .dioses-intro strong {
@@ -941,77 +942,58 @@ input:focus-visible {
   font-weight: 700;
 }
 
-/* Contenedor de los artículos */
+/* ── Grid de cards ──
+   Mobile:  1 columna
+   Tablet:  2 columnas
+   Desktop: 4 columnas
+*/
 .dioses-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
-  padding: 20px var(--padding-h) 60px;
-}
-
-/* Card de cada dios */
-.dios-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 40px 24px;
+  padding: 16px var(--padding-h) 64px;
+  max-width: var(--max-ancho);
+  margin: 0 auto;
 }
 
-/* Imagen a la derecha: texto | imagen */
-.dios-card--derecha {
-  grid-template-areas: "texto imagen";
+@media (min-width: 600px) {
+  .dioses-lista {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.dios-card--derecha .dios-texto   { grid-area: texto; }
-.dios-card--derecha .dios-imagen-wrap { grid-area: imagen; }
-
-/* Imagen a la izquierda: imagen | texto */
-.dios-card--izquierda {
-  grid-template-areas: "imagen texto";
+@media (min-width: 1024px) {
+  .dioses-lista {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 24px;
+    padding: 16px 60px 80px;
+  }
 }
 
-.dios-card--izquierda .dios-imagen-wrap { grid-area: imagen; }
-.dios-card--izquierda .dios-texto       { grid-area: texto; }
-
-/* Texto del dios */
-.dios-texto {
+/* ── Cada card: imagen arriba, texto abajo ── */
+.dios-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
-.dios-texto p {
-  font-size: 13px;
-  color: var(--gris-texto);
-  line-height: 1.75;
-}
-
-/* Bloque imagen + marco rojo + kanji */
+/* ── Bloque de imagen: marco rojo + kanji al lado ── */
 .dios-imagen-wrap {
-  position: relative;
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
+  gap: 6px;
+  width: 100%;
 }
 
-/* Marco rojo recortado en la esquina superior */
+/* Marco con borde rojo */
 .dios-imagen-marco {
   position: relative;
-  width: 100%;
-  max-width: 280px;
+  flex: 1;
   border: 2px solid var(--rojo);
   border-radius: 4px;
   overflow: hidden;
   background: var(--negro);
-}
-
-/* En imagen a la derecha, el marco se alinea a la derecha del wrap */
-.dios-card--derecha .dios-imagen-wrap {
-  justify-content: flex-end;
-}
-
-/* En imagen a la izquierda, el marco queda a la izquierda */
-.dios-card--izquierda .dios-imagen-wrap {
-  justify-content: flex-start;
 }
 
 .dios-imagen-marco img {
@@ -1019,15 +1001,13 @@ input:focus-visible {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-  opacity: 0.92;
+  opacity: 0.90;
   transition: opacity 0.3s;
 }
 
-.dios-imagen-marco:hover img {
-  opacity: 1;
-}
+.dios-imagen-marco:hover img { opacity: 1; }
 
-/* Etiqueta de nombre sobre la imagen (esquina superior) */
+/* Etiqueta nombre en esquina superior izquierda */
 .dios-nombre {
   position: absolute;
   top: 10px;
@@ -1037,124 +1017,42 @@ input:focus-visible {
   font-size: 11px;
   font-weight: 600;
   padding: 4px 10px;
-  border: 1px solid rgba(0,0,0,0.12);
-  letter-spacing: 0.5px;
+  border: 1px solid rgba(0,0,0,0.15);
+  letter-spacing: 0.4px;
   z-index: 2;
   border-radius: 2px;
+  white-space: nowrap;
 }
 
-/* Kanji vertical decorativo al lado exterior del marco */
+/* Kanji vertical a la derecha del marco */
 .dios-kanji {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-size: clamp(22px, 5vw, 36px);
+  font-size: clamp(24px, 3vw, 38px);
   font-weight: 700;
-  color: var(--rojo);
-  opacity: 0.55;
-  letter-spacing: 4px;
+  color: var(--negro);
+  opacity: 0.75;
+  letter-spacing: 2px;
   line-height: 1;
   flex-shrink: 0;
   align-self: flex-start;
-  padding-top: 4px;
+  padding-top: 2px;
 }
 
-/* Kanji al exterior: derecha coloca kanji a la derecha del marco */
-.dios-card--derecha .dios-imagen-wrap {
-  flex-direction: row;
-  gap: 8px;
+/* ── Texto debajo de la imagen ── */
+.dios-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.dios-card--derecha .dios-imagen-marco {
-  order: 1;
+.dios-texto p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.75;
 }
 
-.dios-card--derecha .dios-kanji {
-  order: 2;
-}
-
-/* Izquierda: kanji a la izquierda del marco */
-.dios-card--izquierda .dios-imagen-wrap {
-  flex-direction: row;
-  gap: 8px;
-}
-
-.dios-card--izquierda .dios-kanji {
-  order: 1;
-}
-
-.dios-card--izquierda .dios-imagen-marco {
-  order: 2;
-}
-
-/* ── Responsive dioses ── */
-
-/* Mobile: todo en columna, imagen arriba del texto */
-@media (max-width: 639px) {
-  .dioses-intro {
-    margin: 20px var(--padding-h);
-    padding: 22px 18px;
-  }
-
-  .dios-card,
-  .dios-card--derecha,
-  .dios-card--izquierda {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "imagen"
-      "texto";
-    gap: 16px;
-  }
-
-  .dios-card--derecha .dios-imagen-wrap,
-  .dios-card--izquierda .dios-imagen-wrap {
-    justify-content: center;
-  }
-
-  .dios-imagen-marco {
-    max-width: 220px;
-    margin: 0 auto;
-  }
-
-  .dios-kanji {
-    font-size: 20px;
-  }
-
-  .dioses-lista {
-    gap: 40px;
-  }
-}
-
-/* Tablet: grid de 2 col, imagen más grande */
-@media (min-width: 640px) and (max-width: 1023px) {
-  .dios-imagen-marco {
-    max-width: 240px;
-  }
-
-  .dios-kanji {
-    font-size: 28px;
-  }
-}
-
-/* Desktop: imagen aún más grande */
 @media (min-width: 1024px) {
-  .dioses-intro {
-    margin: 40px var(--padding-h);
-    padding: 36px 40px;
-  }
-
-  .dios-card {
-    gap: 48px;
-  }
-
-  .dios-imagen-marco {
-    max-width: 320px;
-  }
-
-  .dios-texto p {
-    font-size: 14px;
-  }
-
-  .dioses-lista {
-    gap: 72px;
-  }
+  .dios-texto p { font-size: 13px; }
+  .dioses-intro { padding-top: 56px; }
 }
