@@ -1056,3 +1056,239 @@ input:focus-visible {
   .dios-texto p { font-size: 13px; }
   .dioses-intro { padding-top: 56px; }
 }
+
+/* =============================================
+   PÁGINA CRIATURAS — criaturas.html
+   ============================================= */
+
+/* ── Intro: título alineado a la izquierda (mobile) / centrado (desktop) ── */
+.criaturas-intro {
+  padding: 40px var(--padding-h) 16px;
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+}
+
+.criaturas-intro h1 {
+  font-size: clamp(32px, 7vw, 56px);
+  font-weight: 700;
+  color: var(--negro);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.criaturas-intro p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* ── MOBILE: lista en columna, cada fila = imagen+nombre a la izquierda / texto a la derecha ── */
+.criaturas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 24px var(--padding-h) 64px;
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+}
+
+/* Card: fila con visual izquierda + texto derecha */
+.criatura-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: start;
+  gap: 24px;
+  position: relative;
+}
+
+/* Bloque visual: nombre arriba + círculo + kanji superpuesto */
+.criatura-visual {
+  position: relative;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* Nombre encima del círculo */
+.criatura-nombre {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--negro);
+  margin-bottom: 6px;
+  padding-left: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* Círculo beige con imagen */
+.criatura-circulo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--beige);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.criatura-circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Kanji grande en rojo, superpuesto sobre el borde inferior-izquierdo del círculo */
+.criatura-kanji {
+  position: absolute;
+  bottom: -10px;
+  left: -8px;
+  font-size: clamp(52px, 12vw, 80px);
+  font-weight: 900;
+  color: var(--rojo);
+  line-height: 1;
+  z-index: 2;
+  pointer-events: none;
+  letter-spacing: -2px;
+}
+
+/* Texto de descripción */
+.criatura-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 28px; /* alinea con el círculo, debajo del nombre */
+}
+
+.criatura-texto p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.75;
+}
+
+/* Kanji decorativo de fondo (el fantasma grande gris que se ve detrás en el diseño) */
+.criatura-card::after {
+  content: attr(data-kanji-bg);
+  position: absolute;
+  right: -10px;
+  top: 40px;
+  font-size: clamp(80px, 18vw, 140px);
+  font-weight: 900;
+  color: var(--beige);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -4px;
+}
+
+/* ── DESKTOP: 4 columnas, imagen circular arriba, kanji grande encima, texto abajo ── */
+@media (min-width: 1024px) {
+
+  .criaturas-intro {
+    text-align: center;
+    padding: 56px 60px 24px;
+  }
+
+  .criaturas-intro p {
+    margin: 0 auto;
+  }
+
+  .criaturas-lista {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 32px;
+    padding: 40px 60px 80px;
+    align-items: start;
+  }
+
+  /* Card: columna, imagen arriba, texto abajo */
+  .criatura-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    position: relative;
+  }
+
+  /* Sin kanji fantasma en desktop (queda raro en 4 col) */
+  .criatura-card::after {
+    display: none;
+  }
+
+  .criatura-visual {
+    width: 100%;
+  }
+
+  .criatura-nombre {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  /* Círculo más grande en desktop */
+  .criatura-circulo {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* cuadrado → círculo perfecto */
+    position: relative;
+  }
+
+  .criatura-circulo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Kanji más grande, centrado en la parte inferior del círculo */
+  .criatura-kanji {
+    font-size: clamp(64px, 8vw, 110px);
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  /* Texto debajo de la visual */
+  .criatura-texto {
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .criatura-texto p {
+    font-size: 13px;
+  }
+}
+
+/* ── Tablet: 2 columnas ── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .criaturas-lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 32px;
+  }
+
+  .criatura-card {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .criatura-visual {
+    width: 100%;
+  }
+
+  .criatura-circulo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .criatura-kanji {
+    font-size: 64px;
+  }
+
+  .criatura-texto {
+    padding-top: 8px;
+  }
+}
