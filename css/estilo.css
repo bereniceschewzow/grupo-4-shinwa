@@ -1,5 +1,9 @@
+/* =============================================
+   SHINWA — Mitología Japonesa
+   CSS Responsive — Mobile First
+   ============================================= */
 
-
+/* ── Variables ── */
 :root {
   --rojo:        #8B1A1A;
   --rojo-oscuro: #6B1212;
@@ -14,7 +18,7 @@
   --padding-h:   20px;
 }
 
-
+/* ── Reset ── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -48,7 +52,9 @@ a {
   color: inherit;
 }
 
-
+/* =============================================
+   HEADER
+   ============================================= */
 
 header {
   position: sticky;
@@ -66,7 +72,7 @@ header .logo {
   width: 120px;
 }
 
-
+/* Navegación escritorio — oculta en mobile */
 header nav {
   display: none;
 }
@@ -105,7 +111,9 @@ header menu button {
   padding: 0;
 }
 
-
+/* =============================================
+   HERO
+   ============================================= */
 
 .hero {
   position: relative;
@@ -113,7 +121,7 @@ header menu button {
   background: var(--blanco);
 }
 
-
+/* Imagen hero — ocupa todo el ancho */
 .hero > img {
   width: 100%;
   height: 70vw;
@@ -122,6 +130,7 @@ header menu button {
   object-position: center top;
 }
 
+/* Tagline superpuesta sobre la imagen */
 .hero > p {
   position: absolute;
   top: 30%;
@@ -136,7 +145,7 @@ header menu button {
   color: var(--negro);
 }
 
-
+/* Barra de búsqueda */
 .hero search {
   display: flex;
   flex-direction: column;
@@ -164,6 +173,7 @@ header menu button {
   border-bottom-color: var(--rojo);
 }
 
+/* Aside introducción */
 .hero aside {
   margin: 24px var(--padding-h);
   background: var(--beige);
@@ -190,7 +200,9 @@ header menu button {
   margin-bottom: 0;
 }
 
-
+/* =============================================
+   SECCIÓN DIOSES
+   ============================================= */
 
 .seccion-dioses {
   padding: 40px var(--padding-h);
@@ -229,7 +241,7 @@ header menu button {
   line-height: 1.7;
 }
 
-
+/* Grid de dioses — 2 columnas mobile */
 .seccion-dioses ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -256,7 +268,7 @@ header menu button {
   transform: scale(1.04);
 }
 
-
+/* Texto sobre la imagen */
 .seccion-dioses li h3,
 .seccion-dioses li p {
   position: absolute;
@@ -278,7 +290,9 @@ header menu button {
   font-weight: 500;
 }
 
-
+/* =============================================
+   SECCIÓN CRIATURAS
+   ============================================= */
 
 .seccion-criaturas {
   padding: 40px var(--padding-h);
@@ -326,6 +340,9 @@ header menu button {
   line-height: 1.6;
 }
 
+/* =============================================
+   SECCIÓN MITOS
+   ============================================= */
 
 .seccion-mitos {
   padding: 40px var(--padding-h);
@@ -360,11 +377,14 @@ header menu button {
   line-height: 1.7;
 }
 
+/* Texto vertical japonés al lado de la imagen */
 .seccion-mitos article {
   position: relative;
 }
 
-
+/* =============================================
+   SECCIÓN MAPA
+   ============================================= */
 
 .seccion-mapa {
   padding: 40px var(--padding-h);
@@ -372,8 +392,8 @@ header menu button {
 }
 
 .seccion-mapa > img {
-  width: 50%;
-  max-width: 200px;
+  width: 100%;
+  max-width: 400px;
   border: 2px solid var(--rojo);
   border-radius: var(--radio);
   margin: 24px 0;
@@ -399,6 +419,7 @@ header menu button {
   color: var(--gris-texto);
 }
 
+/* Layout mapa en tablet+ */
 @media (min-width: 640px) {
   .seccion-mapa {
     display: grid;
@@ -432,7 +453,9 @@ header menu button {
   }
 }
 
-
+/* =============================================
+   SECCIÓN QUIZ
+   ============================================= */
 
 .seccion-quiz {
   margin: 20px var(--padding-h) 40px;
@@ -473,21 +496,17 @@ header menu button {
   text-transform: uppercase;
 }
 
-
+/* =============================================
+   FOOTER
+   ============================================= */
 
 footer {
-  background: #a19e8f;
+  background: var(--negro);
   color: var(--blanco);
   padding: 0;
 }
 
-.logo-footer {
-display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap; 
-  color: var(--beige-claro);
-}
+/* Redes sociales — barra roja */
 .footer-redes {
   display: flex;
   justify-content: center;
@@ -514,25 +533,31 @@ display: flex;
   filter: brightness(0) invert(1);
 }
 
-
-footer > .logo {
-  margin: 32px var(--padding-h) 16px;
-  filter: brightness(0) invert(1);
-  width: 110px;
+/* Cuerpo del footer — wrapper principal */
+.footer-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px var(--padding-h) 0;
 }
 
-footer > p {
-  padding: 0 var(--padding-h);
+.footer-info .logo {
+  filter: brightness(0) invert(1);
+  width: 110px;
+  margin-bottom: 16px;
+}
+
+.footer-info > p {
   font-size: 12px;
   color: rgba(255,255,255,0.65);
   max-width: 340px;
   line-height: 1.7;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
+/* Nav explorar */
 footer nav {
-  padding: 0 var(--padding-h);
-  margin-bottom: 32px;
+  margin-bottom: 0;
 }
 
 footer nav h4 {
@@ -558,10 +583,9 @@ footer nav ul li a:hover {
   color: var(--blanco);
 }
 
-
+/* Acerca de */
 footer section {
-  padding: 0 var(--padding-h);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 footer section h4 {
@@ -578,14 +602,15 @@ footer section p {
   max-width: 340px;
 }
 
-footer > img:last-of-type {
+/* Imagen bonsai decorativa */
+.footer-bonsai {
   width: 100%;
-  max-width: 300px;
-  margin: 0 auto 24px;
-  opacity: 0.25;
+  max-width: 280px;
+  opacity: 0.20;
+  margin-top: 8px;
 }
 
-
+/* Legal */
 .footer-legal {
   display: flex;
   flex-wrap: wrap;
@@ -604,7 +629,9 @@ footer > img:last-of-type {
   color: var(--blanco);
 }
 
-
+/* =============================================
+   RESPONSIVE — TABLET (640px+)
+   ============================================= */
 
 @media (min-width: 640px) {
   :root {
@@ -665,7 +692,9 @@ footer > img:last-of-type {
   }
 }
 
-
+/* =============================================
+   RESPONSIVE — DESKTOP (1024px+)
+   ============================================= */
 
 @media (min-width: 1024px) {
   :root {
@@ -760,7 +789,7 @@ footer > img:last-of-type {
     margin: 0;
   }
 
-
+  /* Limpieza del float */
   .hero::after {
     content: '';
     display: table;
@@ -818,7 +847,9 @@ footer > img:last-of-type {
   }
 }
 
-
+/* =============================================
+   RESPONSIVE — WIDESCREEN (1280px+)
+   ============================================= */
 
 @media (min-width: 1280px) {
   :root {
@@ -842,7 +873,9 @@ footer > img:last-of-type {
   }
 }
 
-
+/* =============================================
+   UTILIDADES Y ANIMACIONES
+   ============================================= */
 
 /* Transición suave en hover para cards */
 .seccion-dioses li,
@@ -874,4 +907,254 @@ input:focus-visible {
   outline: 2px solid var(--rojo);
   outline-offset: 3px;
   border-radius: 3px;
+}
+
+/* =============================================
+   PÁGINA DIOSES — dioses.html
+   ============================================= */
+
+/* Intro con fondo beige redondeado */
+.dioses-intro {
+  margin: 32px var(--padding-h);
+  background: var(--beige);
+  border-radius: 20px;
+  padding: 28px 24px;
+}
+
+.dioses-intro h1 {
+  font-size: clamp(28px, 8vw, 48px);
+  font-weight: 700;
+  color: var(--negro);
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.dioses-intro p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.dioses-intro strong {
+  color: var(--negro);
+  font-weight: 700;
+}
+
+/* Contenedor de los artículos */
+.dioses-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding: 20px var(--padding-h) 60px;
+}
+
+/* Card de cada dios */
+.dios-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Imagen a la derecha: texto | imagen */
+.dios-card--derecha {
+  grid-template-areas: "texto imagen";
+}
+
+.dios-card--derecha .dios-texto   { grid-area: texto; }
+.dios-card--derecha .dios-imagen-wrap { grid-area: imagen; }
+
+/* Imagen a la izquierda: imagen | texto */
+.dios-card--izquierda {
+  grid-template-areas: "imagen texto";
+}
+
+.dios-card--izquierda .dios-imagen-wrap { grid-area: imagen; }
+.dios-card--izquierda .dios-texto       { grid-area: texto; }
+
+/* Texto del dios */
+.dios-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dios-texto p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.75;
+}
+
+/* Bloque imagen + marco rojo + kanji */
+.dios-imagen-wrap {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Marco rojo recortado en la esquina superior */
+.dios-imagen-marco {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  border: 2px solid var(--rojo);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--negro);
+}
+
+/* En imagen a la derecha, el marco se alinea a la derecha del wrap */
+.dios-card--derecha .dios-imagen-wrap {
+  justify-content: flex-end;
+}
+
+/* En imagen a la izquierda, el marco queda a la izquierda */
+.dios-card--izquierda .dios-imagen-wrap {
+  justify-content: flex-start;
+}
+
+.dios-imagen-marco img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  opacity: 0.92;
+  transition: opacity 0.3s;
+}
+
+.dios-imagen-marco:hover img {
+  opacity: 1;
+}
+
+/* Etiqueta de nombre sobre la imagen (esquina superior) */
+.dios-nombre {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255,255,255,0.92);
+  color: var(--negro);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  letter-spacing: 0.5px;
+  z-index: 2;
+  border-radius: 2px;
+}
+
+/* Kanji vertical decorativo al lado exterior del marco */
+.dios-kanji {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: clamp(22px, 5vw, 36px);
+  font-weight: 700;
+  color: var(--rojo);
+  opacity: 0.55;
+  letter-spacing: 4px;
+  line-height: 1;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding-top: 4px;
+}
+
+/* Kanji al exterior: derecha coloca kanji a la derecha del marco */
+.dios-card--derecha .dios-imagen-wrap {
+  flex-direction: row;
+  gap: 8px;
+}
+
+.dios-card--derecha .dios-imagen-marco {
+  order: 1;
+}
+
+.dios-card--derecha .dios-kanji {
+  order: 2;
+}
+
+/* Izquierda: kanji a la izquierda del marco */
+.dios-card--izquierda .dios-imagen-wrap {
+  flex-direction: row;
+  gap: 8px;
+}
+
+.dios-card--izquierda .dios-kanji {
+  order: 1;
+}
+
+.dios-card--izquierda .dios-imagen-marco {
+  order: 2;
+}
+
+/* ── Responsive dioses ── */
+
+/* Mobile: todo en columna, imagen arriba del texto */
+@media (max-width: 639px) {
+  .dioses-intro {
+    margin: 20px var(--padding-h);
+    padding: 22px 18px;
+  }
+
+  .dios-card,
+  .dios-card--derecha,
+  .dios-card--izquierda {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "imagen"
+      "texto";
+    gap: 16px;
+  }
+
+  .dios-card--derecha .dios-imagen-wrap,
+  .dios-card--izquierda .dios-imagen-wrap {
+    justify-content: center;
+  }
+
+  .dios-imagen-marco {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .dios-kanji {
+    font-size: 20px;
+  }
+
+  .dioses-lista {
+    gap: 40px;
+  }
+}
+
+/* Tablet: grid de 2 col, imagen más grande */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .dios-imagen-marco {
+    max-width: 240px;
+  }
+
+  .dios-kanji {
+    font-size: 28px;
+  }
+}
+
+/* Desktop: imagen aún más grande */
+@media (min-width: 1024px) {
+  .dioses-intro {
+    margin: 40px var(--padding-h);
+    padding: 36px 40px;
+  }
+
+  .dios-card {
+    gap: 48px;
+  }
+
+  .dios-imagen-marco {
+    max-width: 320px;
+  }
+
+  .dios-texto p {
+    font-size: 14px;
+  }
+
+  .dioses-lista {
+    gap: 72px;
+  }
 }
