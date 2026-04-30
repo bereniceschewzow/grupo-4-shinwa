@@ -1,14 +1,20 @@
-<html lang="es"><head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mapa mitológico - Shinwa</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <header>
-    <img src="img/weblogo.png"alt="Shinwa logo" width="200">
-
+    <a href="index.html">
+        <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+    </a>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -19,52 +25,127 @@
             <li><a href="quiz.html">Quiz mitológico</a></li>
         </ul>
     </nav>
+    <menu>
+        <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.svg" alt="Buscar"></a></li>
+        <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.svg" alt="Usuario"></a></li>
+        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.svg" alt="Menú"></button></li>
+    </menu>
 </header>
 
-    <h2>Mapa Mitológico Japonés</h2>
-<img src="img/1mapa-8.png"alt="mapa">
-  <p>
-En la mitología japonesa, el universo no se concibe como un espacio único y homogéneo, sino como una serie de planos superpuestos que dialogan entre sí. Cada uno de estos territorios posee su propia lógica, sus habitantes y una carga simbólica particular. Más que lugares físicos, son estados de existencia que organizan la relación entre los dioses, los humanos y la muerte.
-</p>
+<main class="mapa-main">
 
-<p>
-Este mapa no solo describe espacios, sino también tensiones: entre pureza e impureza, entre luz y oscuridad, entre lo eterno y lo efímero. Recorrerlo es, en cierto modo, comprender cómo los japoneses antiguos pensaban el mundo y su lugar dentro de él.
-</p>
+    <!-- Título -->
+    <h1 class="mapa-titulo">Mapa mitologico</h1>
 
-<h3>Takamagahara</h3>
-<p>
-Es el plano celestial donde habitan los dioses principales, como Amaterasu. Representa un mundo puro, ordenado y perfecto. Aunque está separado del mundo humano, los dioses pueden influir en él y los humanos intentan comunicarse mediante rituales.
-</p>
+    <!-- Bloque superior: imagen del mapa + texto introductorio -->
+    <div class="mapa-superior">
 
-<h3>Yomi</h3>
-<p>
-Es el mundo de los muertos, un lugar oscuro y sin vida al que todas las personas van al morir. No es un castigo, sino un destino inevitable. El mito de Izanagi e Izanami muestra que la muerte es irreversible.
-</p>
+        <!-- Imagen del mapa con kanji vertical superpuesto -->
+        <div class="mapa-imagen-wrap">
+            <div class="mapa-imagen-marco">
+                <img src="img/1mapa-8.png" alt="Mapa mitológico japonés">
+            </div>
+            <div class="mapa-kanji-col">
+                <span class="mapa-kanji-item">
+                    <span class="mapa-kanji-texto">天地開闢</span>
+                    <span class="mapa-kanji-roma">[Takamagahara]</span>
+                </span>
+                <span class="mapa-kanji-item">
+                    <span class="mapa-kanji-texto">この世界</span>
+                    <span class="mapa-kanji-roma">[Kono sekai]</span>
+                </span>
+                <span class="mapa-kanji-item">
+                    <span class="mapa-kanji-texto">黄泉の国</span>
+                    <span class="mapa-kanji-roma">[Yomi no kuni]</span>
+                </span>
+            </div>
+        </div>
 
-<h3>Ashihara no Nakatsukuni</h3>
-<p>
-Es el mundo de los humanos. Funciona como un punto intermedio entre el cielo y el inframundo. Es un lugar de cambio constante, donde conviven lo natural, lo espiritual y lo humano.
-</p>
+        <!-- Texto introductorio -->
+        <div class="mapa-intro-texto">
+            <p>En la mitología japonesa, el universo no se concibe como un espacio único y homogéneo, sino como una serie de planos superpuestos que dialogan entre sí. Cada uno de estos territorios posee su propia lógica, sus habitantes y una carga simbólica particular. Más que lugares físicos, son estados de existencia que organizan la relación entre los dioses, los humanos y la muerte.</p>
+            <p>Este mapa no solo describe espacios, sino también tensiones: entre pureza e impureza, entre luz y oscuridad, entre lo eterno y lo efímero. Recorrerlo es, en cierto modo, comprender cómo los japoneses antiguos pensaban el mundo y su lugar dentro de él.</p>
+        </div>
 
-<h3>Monte Fuji</h3>
-<p>
-Es una montaña sagrada y símbolo espiritual de Japón. Representa la conexión entre lo humano y lo divino, y subirlo se considera una experiencia de purificación.
-</p>
+    </div>
 
-<h3>Izumo</h3>
-<p>
-Es una región sagrada donde, según la tradición, los dioses se reúnen una vez al año para decidir el destino de las personas, especialmente sus relaciones. Representa el destino y la conexión espiritual.
-</p>
+    <!-- Lista de lugares -->
+    <div class="mapa-lugares">
 
-</section>
+        <div class="mapa-lugar">
+            <h2 class="mapa-lugar-titulo">Takamagahara</h2>
+            <div class="mapa-lugar-desc">
+                <p>Es el plano celestial donde habitan los dioses principales, como Amaterasu. Representa un mundo puro, ordenado y perfecto. Aunque está separado del mundo humano, los dioses pueden influir en él y los humanos intentan comunicarse mediante rituales.</p>
+            </div>
+        </div>
 
-  <footer>
-    <p><a href="index.html"> Volver al inicio</a></p>
-     <ul>
-    <li>Aviso Legal | </li>
-    <li>Política de cookies |</li> 
-    <li>Términos y condiciones</li>
+        <div class="mapa-lugar">
+            <h2 class="mapa-lugar-titulo">Yomi</h2>
+            <div class="mapa-lugar-desc">
+                <p>Es el mundo de los muertos, un lugar oscuro y sin vida al que todas las personas van al morir. No es un castigo, sino un destino inevitable. El mito de Izanagi e Izanami muestra que la muerte es irreversible.</p>
+            </div>
+        </div>
+
+        <div class="mapa-lugar">
+            <h2 class="mapa-lugar-titulo">Ashihara no Nakatsukuni</h2>
+            <div class="mapa-lugar-desc">
+                <p>Es el mundo de los humanos. Funciona como un punto intermedio entre el cielo y el inframundo. Es un lugar de cambio constante, donde conviven lo natural, lo espiritual y lo humano.</p>
+            </div>
+        </div>
+
+        <div class="mapa-lugar">
+            <h2 class="mapa-lugar-titulo">Monte Fuji</h2>
+            <div class="mapa-lugar-desc">
+                <p>Es una montaña sagrada y símbolo espiritual de Japón. Representa la conexión entre lo humano y lo divino, y subirlo se considera una experiencia de purificación.</p>
+            </div>
+        </div>
+
+        <div class="mapa-lugar">
+            <h2 class="mapa-lugar-titulo">Izumo</h2>
+            <div class="mapa-lugar-desc">
+                <p>Es una región sagrada donde, según la tradición, los dioses se reúnen una vez al año para decidir el destino de las personas, especialmente sus relaciones. Representa el destino y la conexión espiritual.</p>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <ul class="footer-redes">
+        <li><a href="#" aria-label="Instagram"><img src="img/icono-instagram.svg" alt="Instagram"></a></li>
+        <li><a href="#" aria-label="Facebook"><img src="img/icono-facebook.svg" alt="Facebook"></a></li>
+        <li><a href="#" aria-label="YouTube"><img src="img/icono-youtube.svg" alt="YouTube"></a></li>
+    </ul>
+    <div class="footer-cuerpo">
+        <div class="footer-info">
+            <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+            <p>Una enciclopedia digital dedicada a la mitología japonesa, donde se ofrece una mirada clara y accesible la riqueza cultural y espiritual de Japón.</p>
+            <nav>
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#">Origen del mundo</a></li>
+                    <li><a href="#">Leyendas de Kitsune</a></li>
+                    <li><a href="#">Espíritus y demonios</a></li>
+                    <li><a href="#">Personajes destacados</a></li>
+                    <li><a href="#">Curiosidades</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-acerca">
+            <section>
+                <h4>Acerca de</h4>
+                <p>Esta página fue creada con el objetivo de acercar sus historias, dioses y criaturas a todo tipo de público. Este espacio busca informar y despertar la curiosidad por un mundo lleno de simbolismo y misterio.</p>
+            </section>
+            <img src="img/bonsai.png" alt="Bonsai decorativo" class="footer-bonsai">
+        </div>
+    </div>
+    <ul class="footer-legal">
+        <li><a href="#">Aviso Legal</a></li>
+        <li><a href="#">Política de cookies</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
     </ul>
 </footer>
+
 </body>
 </html>
