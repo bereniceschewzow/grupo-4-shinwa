@@ -1292,3 +1292,246 @@ input:focus-visible {
     padding-top: 8px;
   }
 }
+
+/* =============================================
+   PÁGINA MAPA — mapa.html
+   ============================================= */
+
+.mapa-main {
+  padding: 0 0 64px;
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+}
+
+/* ── Título ── */
+.mapa-titulo {
+  font-size: clamp(28px, 7vw, 52px);
+  font-weight: 700;
+  color: var(--negro);
+  padding: 40px var(--padding-h) 32px;
+  line-height: 1.1;
+}
+
+/* ── Bloque superior: imagen + texto ──
+   Mobile: columna (imagen arriba, texto abajo)
+   Desktop: fila (imagen izquierda, texto derecha)
+*/
+.mapa-superior {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 var(--padding-h);
+  margin-bottom: 48px;
+}
+
+/* Imagen del mapa con marco rojo y kanji superpuesto */
+.mapa-imagen-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  max-width: 440px;
+}
+
+.mapa-imagen-marco {
+  border: 2px solid var(--rojo);
+  overflow: hidden;
+  flex: 1;
+}
+
+.mapa-imagen-marco img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Columna de kanji vertical pegada a la derecha del marco */
+.mapa-kanji-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 0 12px 10px;
+  gap: 0;
+}
+
+.mapa-kanji-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.mapa-kanji-texto {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: clamp(18px, 4vw, 26px);
+  font-weight: 700;
+  color: var(--negro);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.mapa-kanji-roma {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 10px;
+  color: var(--gris-texto);
+  letter-spacing: 1px;
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+/* Texto introductorio */
+.mapa-intro-texto {
+  background: var(--beige-claro);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mapa-intro-texto p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.75;
+}
+
+/* ── Lista de lugares ──
+   Mobile: columna simple
+   Desktop: columna en la mitad derecha
+*/
+.mapa-lugares {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 var(--padding-h);
+}
+
+.mapa-lugar-titulo {
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 700;
+  color: var(--rojo);
+  margin-bottom: 8px;
+}
+
+.mapa-lugar-desc {
+  background: var(--beige);
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+
+.mapa-lugar-desc p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.75;
+}
+
+/* ── TABLET (640px+) ── */
+@media (min-width: 640px) {
+  .mapa-imagen-wrap {
+    max-width: 500px;
+  }
+
+  .mapa-intro-texto {
+    padding: 28px 24px;
+  }
+
+  .mapa-intro-texto p {
+    font-size: 14px;
+  }
+}
+
+/* ── DESKTOP (1024px+) ──
+   Layout: columna izquierda = imagen + texto intro superpuesto
+           columna derecha   = lista de lugares
+*/
+@media (min-width: 1024px) {
+  .mapa-titulo {
+    padding: 48px 60px 40px;
+  }
+
+  .mapa-superior {
+    padding: 0 60px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 0;
+  }
+
+  /* En desktop, imagen + texto intro van juntos en columna izq */
+  .mapa-imagen-wrap {
+    max-width: 390px;
+    flex-shrink: 0;
+  }
+
+  .mapa-imagen-marco {
+    min-height: 500px;
+  }
+
+  /* Texto intro aparece a la derecha de la imagen en desktop */
+  .mapa-intro-texto {
+    flex: 1;
+    background: var(--beige-claro);
+    padding: 32px 28px;
+    min-height: 300px;
+    justify-content: center;
+  }
+
+  /* En desktop: layout de 2 columnas para el bloque completo */
+  .mapa-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 60px;
+    padding: 0 60px 80px;
+    max-width: var(--max-ancho);
+    margin: 0 auto;
+  }
+
+  .mapa-titulo {
+    grid-column: 1 / -1;
+    padding: 48px 0 40px;
+  }
+
+  .mapa-superior {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .mapa-imagen-wrap {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .mapa-imagen-marco {
+    min-height: 400px;
+  }
+
+  .mapa-intro-texto {
+    background: var(--beige-claro);
+    padding: 28px 24px;
+  }
+
+  .mapa-lugares {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 0;
+    align-self: start;
+    gap: 24px;
+  }
+
+  .mapa-kanji-texto {
+    font-size: 22px;
+  }
+
+  .mapa-kanji-roma {
+    font-size: 9px;
+  }
+}
