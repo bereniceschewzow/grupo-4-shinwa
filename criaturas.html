@@ -2,15 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Criaturas míticas - Shinwa</title>
-   <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <header>
-    <img src="img/weblogo.png"alt="Shinwa logo" width="200">
-
+    <a href="index.html">
+        <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+    </a>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -21,108 +25,122 @@
             <li><a href="quiz.html">Quiz mitológico</a></li>
         </ul>
     </nav>
+    <menu>
+        <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.svg" alt="Buscar"></a></li>
+        <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.svg" alt="Usuario"></a></li>
+        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.svg" alt="Menú"></button></li>
+    </menu>
 </header>
 
 <main>
 
-<section>
-    <h2>Criaturas míticas</h2>
+    <!-- Título de sección -->
+    <section class="criaturas-intro">
+        <h1>Criaturas míticas</h1>
+        <p>En la mitología japonesa existen numerosas criaturas fantásticas que habitan bosques, ríos, montañas y otros mundos espirituales.</p>
+    </section>
 
-    <p>
-        En la mitología japonesa existen numerosas criaturas fantásticas que habitan 
-        bosques, ríos, montañas y otros mundos espirituales.
-    </p>
-</section>
+    <!-- Grid de criaturas -->
+    <section class="criaturas-lista">
 
-<section>
+        <!-- Kitsune -->
+        <article class="criatura-card">
+            <div class="criatura-visual">
+                <span class="criatura-nombre">[Kitsune]</span>
+                <div class="criatura-circulo">
+                    <img src="img/kitsune.png" alt="Kitsune">
+                </div>
+                <span class="criatura-kanji" aria-hidden="true">狐</span>
+            </div>
+            <div class="criatura-texto">
+                <p>Los kitsune son zorros mágicos dotados de gran inteligencia, longevidad y poderes sobrenaturales. Son conocidos por su capacidad de transformarse en humanos, especialmente en mujeres, y por su habilidad para crear ilusiones muy convincentes.</p>
+                <p>A medida que envejecen y se vuelven más poderosos, pueden desarrollar múltiples colas, llegando hasta nueve, lo que simboliza su sabiduría y poder.</p>
+            </div>
+        </article>
 
-    <article>
-        <h3>Kitsune</h3>
-        <img src= "img/kitsune.png" alt="Kitsune" width="300">
+        <!-- Kappa -->
+        <article class="criatura-card">
+            <div class="criatura-visual">
+                <span class="criatura-nombre">[Kappa]</span>
+                <div class="criatura-circulo">
+                    <img src="img/kappa.png" alt="Kappa">
+                </div>
+                <span class="criatura-kanji" aria-hidden="true">河童</span>
+            </div>
+            <div class="criatura-texto">
+                <p>El kappa es una criatura acuática que habita en ríos, lagos y estanques. Tiene un aspecto peculiar, con rasgos de tortuga, piel verdosa y un cuenco lleno de agua en la cabeza, del cual depende su energía vital. Aunque a menudo se lo describe como travieso y bromista, también puede ser peligroso.</p>
+                <p>En algunas leyendas, los kappa atacan a humanos o animales, especialmente a quienes se acercan imprudentemente al agua.</p>
+            </div>
+        </article>
 
-        <p>
-            Los kitsune son zorros mágicos dotados de gran
-inteligencia, longevidad y poderes sobrenaturales. Son
-conocidos por su capacidad de transformarse en humanos,
-especialmente en mujeres, y por su habilidad para crear
-ilusiones muy convincentes. 
-            <p>
-                A medida que envejecen y se
-vuelven más poderosos, pueden desarrollar múltiples colas,
-llegando hasta nueve, lo que simboliza su sabiduría y poder.
-            </p>
-        </p>
-    </article>
+        <!-- Tengu -->
+        <article class="criatura-card">
+            <div class="criatura-visual">
+                <span class="criatura-nombre">[Tengu]</span>
+                <div class="criatura-circulo">
+                    <img src="img/tengu.png" alt="Tengu">
+                </div>
+                <span class="criatura-kanji" aria-hidden="true">韻</span>
+            </div>
+            <div class="criatura-texto">
+                <p>Los tengu son criaturas espirituales que habitan en montañas y bosques, y suelen representarse como seres humanoides con rasgos de ave, como alas, garras o una nariz anormalmente larga.</p>
+                <p>En sus orígenes eran vistos como demonios peligrosos, pero con el tiempo su imagen evolucionó hacia la de guardianes y protectores de la naturaleza. Son famosos por su dominio de las artes marciales y la espada, y en algunas leyendas actúan como maestros que entrenan a guerreros o monjes.</p>
+            </div>
+        </article>
 
-    <article>
-        <h3>Tengu</h3>
-        <img src= "img/tengu.png" alt="Tengu" width="300">
+        <!-- Ryū -->
+        <article class="criatura-card">
+            <div class="criatura-visual">
+                <span class="criatura-nombre">[Ryū]</span>
+                <div class="criatura-circulo">
+                    <img src="img/ryu.png" alt="Ryū">
+                </div>
+                <span class="criatura-kanji" aria-hidden="true">天狗</span>
+            </div>
+            <div class="criatura-texto">
+                <p>El ryū es el dragón japonés, una criatura poderosa asociada principalmente al agua, como ríos, mares y lluvias. A diferencia de los dragones occidentales, que suelen ser destructivos, el ryū es generalmente benevolente, sabio y protector.</p>
+                <p>Se lo considera un símbolo de equilibrio natural, fuerza y conocimiento. Estos dragones tienen cuerpos largos y serpenteantes, sin alas, pero con la capacidad de volar. Están vinculados a deidades marinas como Ryūjin, quien gobierna los océanos.</p>
+            </div>
+        </article>
 
-        <p>
-        Los tengu son criaturas espirituales que habitan en
-montañas y bosques, y suelen representarse como seres
-humanoides con rasgos de ave, como alas, garras o una
-nariz anormalmente larga.
-        </p>
-        <p>
-        En sus orígenes eran vistos como
-demonios peligrosos, pero con el tiempo su imagen
-evolucionó hacia la de guardianes y protectores de la
-naturaleza.Son famosos por su dominio de las artes
-marciales y la espada, y en algunas leyendas actúan como
-maestros que entrenan a guerreros o monjes.
-        </p>
-    </article>
-
-    <article>
-        <h3>Ryū</h3>
-        <img src= "img/ryu.png" alt="Ryū" width="300">
-
-        <p>
-        El ryū es el dragón japonés, una criatura poderosa asociada
-principalmente al agua, como ríos, mares y lluvias. A
-diferencia de los dragones occidentales, que suelen ser
-destructivos, el ryū es generalmente benevolente, sabio y
-protector.
-        </p>
-        <p>
-        Se lo considera un símbolo de equilibrio natural,
-fuerza y conocimiento.Estos dragones tienen cuerpos largos
-y serpenteantes, sin alas, pero con la capacidad de volar.
-Están vinculados a deidades marinas como Ryūjin, quien
-gobierna los océanos.
-        </p>
-    </article>
-
-    <article>
-        <h3>Kappa</h3>
-        <img src= "img/kappa.png" alt="Kappa" width="300">
-
-        <p>
-        El kappa es una criatura acuática que habita en ríos, lagos y
-estanques. Tiene un aspecto peculiar, con rasgos de
-tortuga, piel verdosa y un cuenco lleno de agua en la
-cabeza, del cual depende su energía vital. Aunque a
-menudo se lo describe como travieso y bromista, también
-puede ser peligroso.
-        </p>
-        <p>
-        En algunas leyendas, los kappa atacan
-a humanos o animales, especialmente a quienes se acercan
-imprudentemente al agua.
-        </p>
-    </article>
-
-</section>
+    </section>
 
 </main>
 
 <footer>
-    <p><a href="index.html"> Volver al inicio</a></p>
-     <ul>
-    <li>Aviso Legal | </li>
-    <li>Política de cookies |</li> 
-    <li>Términos y condiciones</li>
+    <ul class="footer-redes">
+        <li><a href="#" aria-label="Instagram"><img src="img/icono-instagram.svg" alt="Instagram"></a></li>
+        <li><a href="#" aria-label="Facebook"><img src="img/icono-facebook.svg" alt="Facebook"></a></li>
+        <li><a href="#" aria-label="WhatsApp"><img src="img/icono-whatsapp.svg" alt="WhatsApp"></a></li>
+        <li><a href="#" aria-label="YouTube"><img src="img/icono-youtube.svg" alt="YouTube"></a></li>
+    </ul>
+    <div class="footer-cuerpo">
+        <div class="footer-info">
+            <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+            <p>Una enciclopedia digital dedicada a la mitología japonesa, donde se ofrece una mirada clara y accesible la riqueza cultural y espiritual de Japón.</p>
+            <nav>
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#">Origen del mundo</a></li>
+                    <li><a href="#">Leyendas de Kitsune</a></li>
+                    <li><a href="#">Espíritus y demonios</a></li>
+                    <li><a href="#">Personajes destacados</a></li>
+                    <li><a href="#">Curiosidades</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-acerca">
+            <section>
+                <h4>Acerca de</h4>
+                <p>Esta página fue creada con el objetivo de acercar sus historias, dioses y criaturas a todo tipo de público. Este espacio busca informar y despertar la curiosidad por un mundo lleno de simbolismo y misterio.</p>
+            </section>
+            <img src="img/bonsai.png" alt="Bonsai decorativo" class="footer-bonsai">
+        </div>
+    </div>
+    <ul class="footer-legal">
+        <li><a href="#">Aviso Legal</a></li>
+        <li><a href="#">Política de cookies</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
     </ul>
 </footer>
 
