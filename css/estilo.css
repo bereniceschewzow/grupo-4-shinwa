@@ -1996,7 +1996,7 @@ input:focus-visible {
   }
 
   .quiz-card {
-    max-width: 380px;
+    max-width: 400px;
   }
 
   /* kanji sale por la derecha de la card en desktop */
