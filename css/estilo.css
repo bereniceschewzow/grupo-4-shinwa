@@ -1,906 +1,67 @@
-/* =============================================
-   SHINWA — Mitología Japonesa
-   CSS Responsive — Mobile First
-   ============================================= */
 
-/* ── Variables ── */
 :root {
-  --rojo:        #8B1A1A;
-  --rojo-oscuro: #6B1212;
-  --negro:       #111111;
-  --blanco:      #FFFFFF;
-  --beige:       #E8E4DC;
-  --beige-claro: #F2EFE8;
-  --gris-texto:  #4A4A4A;
-  --fuente-sans: 'Montserrat', sans-serif;
-  --radio:       12px;
-  --max-ancho:   1200px;
-  --padding-h:   20px;
+  --rojo:       #8B1A1A;
+  --negro:      #111111;
+  --blanco:     #FFFFFF;
+  --beige:      #E8E4DC;
+  --beige-claro:#F2EFE8;
+  --gris:       #4A4A4A;
+  --sans:       'Montserrat', sans-serif;
+  --radio:      12px;
+  --max:        1200px;
+  --ph:         20px;   /* padding horizontal */
 }
+@media (min-width: 640px)  { :root { --ph: 32px; } }
+@media (min-width: 1024px) { :root { --ph: 60px; } }
+@media (min-width: 1280px) { :root { --ph: 80px; } }
 
-/* ── Reset ── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-html {
-  scroll-behavior: smooth;
-}
 
-body {
-  font-family: var(--fuente-sans);
-  background-color: var(--blanco);
-  color: var(--negro);
-  line-height: 1.6;
-  font-size: 15px;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  { font-family: var(--sans); background: var(--blanco); color: var(--negro); line-height: 1.6; font-size: 15px; }
+img   { display: block; max-width: 100%; height: auto; }
+ul    { list-style: none; }
+a     { text-decoration: none; color: inherit; }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
 
-ul {
-  list-style: none;
-}
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
-/* =============================================
-   HEADER
-   ============================================= */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--blanco);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px var(--padding-h);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-header .logo {
-  width: 120px;
-}
-
-/* Navegación escritorio — oculta en mobile */
-header nav {
-  display: none;
-}
-
-header menu {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 0;
-}
-
-header menu li {
-  list-style: none;
-}
-
-header menu img {
-  width: 22px;
-  height: 22px;
-}
-
-header menu a,
-header menu button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-/* Botón menú hamburguesa */
-.btn-menu {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-/* =============================================
-   HERO
-   ============================================= */
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  background: var(--blanco);
-}
-
-/* Imagen hero — ocupa todo el ancho */
-.hero > img {
-  width: 100%;
-  height: 70vw;
-  max-height: 520px;
-  object-fit: cover;
-  object-position: center top;
-}
-
-/* Tagline superpuesta sobre la imagen */
-.hero > p {
-  position: absolute;
-  top: 30%;
-  right: var(--padding-h);
-  max-width: 220px;
-  background: var(--blanco);
-  border: 2px solid var(--rojo);
-  padding: 14px 16px;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--negro);
-}
-
-/* Barra de búsqueda */
-.hero search {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 20px var(--padding-h) 0;
-}
-
-.hero search label {
-  font-size: 13px;
-  color: var(--gris-texto);
-}
-
-.hero search input[type="search"] {
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid var(--negro);
-  padding: 8px 0;
-  font-family: var(--fuente-sans);
-  font-size: 14px;
-  outline: none;
-  background: transparent;
-}
-
-.hero search input[type="search"]:focus {
-  border-bottom-color: var(--rojo);
-}
-
-/* Aside introducción */
-.hero aside {
-  margin: 24px var(--padding-h);
-  background: var(--beige);
-  border-radius: var(--radio);
-  padding: 24px 20px;
-}
-
-.hero aside h2 {
-  font-size: clamp(20px, 5vw, 28px);
+/* Títulos de página (h1 interior) */
+.page-titulo {
+  font-size: clamp(28px, 7vw, 52px);
   font-weight: 700;
-  margin-bottom: 14px;
-  line-height: 1.2;
   color: var(--negro);
+  line-height: 1.1;
 }
 
-.hero aside p {
-  font-size: 13px;
-  color: var(--gris-texto);
-  margin-bottom: 10px;
-  line-height: 1.7;
-}
-
-.hero aside p:last-child {
-  margin-bottom: 0;
-}
-
-/* =============================================
-   SECCIÓN DIOSES
-   ============================================= */
-
-.seccion-dioses {
-  padding: 40px var(--padding-h);
-}
-
-.seccion-dioses > h2,
-.seccion-criaturas > h2,
-.seccion-mitos > h2,
-.seccion-mapa > h2 {
+/* Títulos de sección del index */
+.seccion-titulo {
   font-size: clamp(28px, 7vw, 48px);
   font-weight: 700;
+  color: var(--negro);
   margin-bottom: 10px;
+}
+.seccion-titulo a            { color: inherit; transition: color .2s; }
+.seccion-titulo a:hover      { color: var(--rojo); }
+
+/* Texto descriptivo genérico */
+.texto-sm  { font-size: 13px; color: var(--gris); line-height: 1.75; }
+.texto-xs  { font-size: 12px; color: var(--gris); line-height: 1.7;  }
+
+/* Kanji vertical decorativo (páginas internas) */
+.kanji-deco {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 900;
   color: var(--negro);
-}
-
-.seccion-dioses > h2 a,
-.seccion-criaturas > h2 a,
-.seccion-mitos > h2 a,
-.seccion-mapa > h2 a {
-  color: inherit;
-  transition: color 0.2s;
-}
-
-.seccion-dioses > h2 a:hover,
-.seccion-criaturas > h2 a:hover,
-.seccion-mitos > h2 a:hover,
-.seccion-mapa > h2 a:hover {
-  color: var(--rojo);
-}
-
-.seccion-dioses > p {
-  font-size: 13px;
-  color: var(--gris-texto);
-  max-width: 400px;
-  margin-bottom: 28px;
-  line-height: 1.7;
-}
-
-/* Grid de dioses — 2 columnas mobile */
-.seccion-dioses ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.seccion-dioses li {
-  position: relative;
-  border-radius: var(--radio);
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  cursor: pointer;
-}
-
-.seccion-dioses li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.seccion-dioses li:hover img {
-  transform: scale(1.04);
-}
-
-/* Texto sobre la imagen */
-.seccion-dioses li h3,
-.seccion-dioses li p {
-  position: absolute;
-  color: var(--blanco);
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-
-.seccion-dioses li h3 {
-  bottom: 30px;
-  left: 14px;
-  font-size: clamp(16px, 4vw, 22px);
-  font-weight: 700;
-}
-
-.seccion-dioses li p {
-  bottom: 12px;
-  left: 14px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-/* =============================================
-   SECCIÓN CRIATURAS
-   ============================================= */
-
-.seccion-criaturas {
-  padding: 40px var(--padding-h);
-  background: var(--blanco);
-}
-
-.seccion-criaturas ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.seccion-criaturas li {
-  background: var(--beige-claro);
-  border-radius: var(--radio);
-  overflow: hidden;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: box-shadow 0.2s;
-}
-
-.seccion-criaturas li:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-}
-
-.seccion-criaturas li img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.seccion-criaturas li h3 {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--negro);
-}
-
-.seccion-criaturas li p {
-  font-size: 12px;
-  color: var(--gris-texto);
-  line-height: 1.6;
-}
-
-/* =============================================
-   SECCIÓN MITOS
-   ============================================= */
-
-.seccion-mitos {
-  padding: 40px var(--padding-h);
-}
-
-.seccion-mitos article {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  gap: 20px;
-  margin-top: 32px;
-}
-
-.seccion-mitos article img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
+  line-height: 1;
+  pointer-events: none;
   flex-shrink: 0;
 }
 
-.seccion-mitos article h3 {
-  font-size: clamp(16px, 4vw, 22px);
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--negro);
-}
 
-.seccion-mitos article p {
-  font-size: 12px;
-  color: var(--gris-texto);
-  line-height: 1.7;
-}
 
-/* Texto vertical japonés al lado de la imagen */
-.seccion-mitos article {
-  position: relative;
-}
-
-/* =============================================
-   SECCIÓN MAPA
-   ============================================= */
-
-.seccion-mapa {
-  padding: 40px var(--padding-h);
-  background: var(--blanco);
-}
-
-.seccion-mapa > img {
-  width: 100%;
-  max-width: 400px;
-  border: 2px solid var(--rojo);
-  border-radius: var(--radio);
-  margin: 24px 0;
-}
-
-.seccion-mapa > h2 {
-  margin-bottom: 0;
-}
-
-.seccion-mapa article {
-  margin-bottom: 16px;
-}
-
-.seccion-mapa article h3 {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--negro);
-  margin-bottom: 4px;
-}
-
-.seccion-mapa article p {
-  font-size: 13px;
-  color: var(--gris-texto);
-}
-
-/* Layout mapa en tablet+ */
-@media (min-width: 640px) {
-  .seccion-mapa {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 20px 40px;
-    align-items: start;
-  }
-
-  .seccion-mapa > h2 {
-    grid-column: 1 / -1;
-  }
-
-  .seccion-mapa > img {
-    grid-row: 2 / 5;
-    grid-column: 1;
-    margin: 0;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .seccion-mapa article {
-    grid-column: 2;
-    margin-bottom: 0;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-  }
-
-  .seccion-mapa article:last-of-type {
-    border-bottom: none;
-  }
-}
-
-/* =============================================
-   SECCIÓN QUIZ
-   ============================================= */
-
-.seccion-quiz {
-  margin: 20px var(--padding-h) 40px;
-}
-
-.seccion-quiz a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--beige);
-  border-radius: var(--radio);
-  padding: 36px 20px;
-  text-align: center;
-  transition: background 0.2s, transform 0.2s;
-  cursor: pointer;
-}
-
-.seccion-quiz a:hover {
-  background: var(--beige-claro);
-  transform: translateY(-2px);
-}
-
-.quiz-kanji {
-  font-size: clamp(32px, 10vw, 56px);
-  font-weight: 700;
-  color: var(--rojo);
-  letter-spacing: 4px;
-  line-height: 1;
-}
-
-.seccion-quiz a > p:last-child {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: var(--negro);
-  text-transform: uppercase;
-}
-
-/* =============================================
-   FOOTER
-   ============================================= */
-
-footer {
-  background: var(--beige);
-  color: var(--negro);
-  padding: 0;
-}
-
-/* Redes sociales — barra roja */
-.footer-redes {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  background: var(--rojo);
-  padding: 16px var(--padding-h);
-  flex-wrap: wrap;
-}
-
-.footer-redes a {
-  display: flex;
-  align-items: center;
-  opacity: 0.9;
-  transition: opacity 0.2s;
-}
-
-.footer-redes a:hover {
-  opacity: 1;
-}
-
-.footer-redes img {
-  width: 22px;
-  height: 22px;
-  filter: brightness(0) invert(1);
-}
-
-/* Cuerpo del footer — wrapper principal */
-.footer-cuerpo {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  padding: 32px var(--padding-h) 0;
-}
-
-.footer-info .logo {
-  filter: none;
-  width: 110px;
-  margin-bottom: 16px;
-}
-
-.footer-info > p {
-  font-size: 12px;
-  color: var(--gris-texto);
-  max-width: 340px;
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-/* Nav explorar */
-footer nav {
-  margin-bottom: 0;
-}
-
-footer nav h4 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--negro);
-  margin-bottom: 14px;
-}
-
-footer nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-footer nav ul li a {
-  font-size: 13px;
-  color: var(--gris-texto);
-  transition: color 0.2s;
-}
-
-footer nav ul li a:hover {
-  color: var(--negro);
-}
-
-/* Acerca de */
-footer section {
-  margin-bottom: 24px;
-}
-
-footer section h4 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--negro);
-  margin-bottom: 12px;
-}
-
-footer section p {
-  font-size: 12px;
-  color: var(--gris-texto);
-  line-height: 1.7;
-  max-width: 340px;
-}
-
-/* Imagen bonsai decorativa */
-.footer-bonsai {
-  width: 100%;
-  max-width: 280px;
-  opacity: 0.30;
-  margin-top: 8px;
-}
-
-/* Legal */
-.footer-legal {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 20px;
-  padding: 20px var(--padding-h);
-  border-top: 1px solid rgba(0,0,0,0.12);
-}
-
-.footer-legal li a {
-  font-size: 11px;
-  color: var(--gris-texto);
-  transition: color 0.2s;
-}
-
-.footer-legal li a:hover {
-  color: var(--negro);
-}
-
-/* =============================================
-   RESPONSIVE — TABLET (640px+)
-   ============================================= */
-
-@media (min-width: 640px) {
-  :root {
-    --padding-h: 32px;
-  }
-
-  /* Hero */
-  .hero > img {
-    height: 55vw;
-  }
-
-  .hero > p {
-    max-width: 280px;
-    font-size: 14px;
-    padding: 18px 20px;
-  }
-
-  .hero search {
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    padding-top: 28px;
-  }
-
-  .hero search label {
-    white-space: nowrap;
-    font-size: 14px;
-  }
-
-  /* Dioses */
-  .seccion-dioses ul {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  /* Criaturas */
-  .seccion-criaturas ul {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  /* Mitos */
-  .seccion-mitos article img {
-    width: 180px;
-    height: 180px;
-  }
-
-  /* Footer columnas */
-  footer > .logo,
-  footer > p {
-    margin-left: var(--padding-h);
-    margin-right: var(--padding-h);
-  }
-
-  footer nav,
-  footer section {
-    padding: 0 var(--padding-h);
-  }
-}
-
-/* =============================================
-   RESPONSIVE — DESKTOP (1024px+)
-   ============================================= */
-
-@media (min-width: 1024px) {
-  :root {
-    --padding-h: 60px;
-  }
-
-  /* Header con nav visible */
-  header {
-    padding: 20px var(--padding-h);
-  }
-
-  header nav {
-    display: flex;
-  }
-
-  header nav ul {
-    display: flex;
-    gap: 32px;
-  }
-
-  header nav ul li a {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--negro);
-    letter-spacing: 0.5px;
-    position: relative;
-    transition: color 0.2s;
-  }
-
-  header nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--rojo);
-    transition: width 0.25s ease;
-  }
-
-  header nav ul li a:hover {
-    color: var(--rojo);
-  }
-
-  header nav ul li a:hover::after {
-    width: 100%;
-  }
-
-  /* Ocultar ícono hamburguesa en desktop */
-  .btn-menu {
-    display: none;
-  }
-
-  /* Hero desktop: imagen de fondo */
-  .hero {
-    min-height: 600px;
-  }
-
-  .hero > img {
-    width: 55%;
-    height: 600px;
-    max-height: none;
-    position: relative;
-    float: left;
-  }
-
-  .hero > p {
-    position: absolute;
-    top: 120px;
-    right: var(--padding-h);
-    max-width: 340px;
-    font-size: 15px;
-  }
-
-  .hero search {
-    position: absolute;
-    bottom: 220px;
-    right: var(--padding-h);
-    width: 380px;
-    padding: 0;
-    background: var(--blanco);
-    padding: 16px 20px;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .hero aside {
-    position: absolute;
-    bottom: 40px;
-    right: var(--padding-h);
-    width: 380px;
-    margin: 0;
-  }
-
-  /* Limpieza del float */
-  .hero::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-
-  /* Dioses — 4 columnas */
-  .seccion-dioses ul {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-
-  /* Criaturas — 4 columnas */
-  .seccion-criaturas ul {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-
-  /* Mitos — imagen más grande */
-  .seccion-mitos article {
-    gap: 40px;
-    max-width: var(--max-ancho);
-  }
-
-  .seccion-mitos article img {
-    width: 220px;
-    height: 220px;
-  }
-
-  .seccion-mitos article h3 {
-    font-size: 28px;
-  }
-
-  .seccion-mitos article p {
-    font-size: 14px;
-  }
-
-  /* Footer desktop — 2 columnas */
-  footer .footer-cuerpo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: var(--max-ancho);
-    margin: 0 auto;
-    padding: 40px var(--padding-h);
-  }
-
-  footer nav ul {
-    columns: 1;
-  }
-
-  .seccion-quiz a {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-}
-
-/* =============================================
-   RESPONSIVE — WIDESCREEN (1280px+)
-   ============================================= */
-
-@media (min-width: 1280px) {
-  :root {
-    --padding-h: 80px;
-  }
-
-  header,
-  .seccion-dioses,
-  .seccion-criaturas,
-  .seccion-mitos,
-  .seccion-mapa,
-  .seccion-quiz {
-    max-width: calc(var(--max-ancho) + 160px);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* En hero, limitar el hero a max-ancho */
-  .hero > img {
-    max-width: 600px;
-  }
-}
-
-/* =============================================
-   UTILIDADES Y ANIMACIONES
-   ============================================= */
-
-/* Transición suave en hover para cards */
-.seccion-dioses li,
-.seccion-criaturas li {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.seccion-dioses li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(139,26,26,0.20);
-}
-
-.seccion-criaturas li:hover {
-  transform: translateY(-4px);
-}
-
-/* Separadores de sección */
-.seccion-dioses,
-.seccion-criaturas,
-.seccion-mitos,
-.seccion-mapa {
-  border-top: 1px solid rgba(0,0,0,0.06);
-}
-
-/* Accesibilidad: focus visible */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
@@ -909,1113 +70,402 @@ input:focus-visible {
   border-radius: 3px;
 }
 
-/* =============================================
-   PÁGINA DIOSES — dioses.html
-   ============================================= */
 
-/* ── Intro: título + subtítulo centrados ── */
-.dioses-intro {
-  text-align: center;
-  padding: 48px var(--padding-h) 32px;
-  max-width: var(--max-ancho);
-  margin: 0 auto;
-}
 
-.dioses-intro h1 {
-  font-size: clamp(32px, 7vw, 56px);
-  font-weight: 700;
-  color: var(--negro);
-  margin-bottom: 16px;
-  line-height: 1.1;
-}
-
-.dioses-intro p {
-  font-size: 14px;
-  color: var(--gris-texto);
-  line-height: 1.7;
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.dioses-intro strong {
-  color: var(--negro);
-  font-weight: 700;
-}
-
-/* ── Grid de cards ──
-   Mobile:  1 columna
-   Tablet:  2 columnas
-   Desktop: 4 columnas
-*/
-.dioses-lista {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px 24px;
-  padding: 16px var(--padding-h) 64px;
-  max-width: var(--max-ancho);
-  margin: 0 auto;
-}
-
-@media (min-width: 600px) {
-  .dioses-lista {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1024px) {
-  .dioses-lista {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px 24px;
-    padding: 16px 60px 80px;
-  }
-}
-
-/* ── Cada card: imagen arriba, texto abajo ── */
-.dios-card {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* ── Bloque de imagen: marco rojo + kanji al lado ── */
-.dios-imagen-wrap {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 6px;
-  width: 100%;
-}
-
-/* Marco con borde rojo */
-.dios-imagen-marco {
-  position: relative;
-  flex: 1;
-  border: 2px solid var(--rojo);
-  border-radius: 4px;
-  overflow: hidden;
-  background: var(--negro);
-}
-
-.dios-imagen-marco img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  opacity: 0.90;
-  transition: opacity 0.3s;
-}
-
-.dios-imagen-marco:hover img { opacity: 1; }
-
-/* Etiqueta nombre en esquina superior izquierda */
-.dios-nombre {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(255,255,255,0.92);
-  color: var(--negro);
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border: 1px solid rgba(0,0,0,0.15);
-  letter-spacing: 0.4px;
-  z-index: 2;
-  border-radius: 2px;
-  white-space: nowrap;
-}
-
-/* Kanji vertical a la derecha del marco */
-.dios-kanji {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: clamp(24px, 3vw, 38px);
-  font-weight: 700;
-  color: var(--negro);
-  opacity: 0.75;
-  letter-spacing: 2px;
-  line-height: 1;
-  flex-shrink: 0;
-  align-self: flex-start;
-  padding-top: 2px;
-}
-
-/* ── Texto debajo de la imagen ── */
-.dios-texto {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.dios-texto p {
-  font-size: 13px;
-  color: var(--gris-texto);
-  line-height: 1.75;
-}
-
-@media (min-width: 1024px) {
-  .dios-texto p { font-size: 13px; }
-  .dioses-intro { padding-top: 56px; }
-}
-
-/* =============================================
-   PÁGINA CRIATURAS — criaturas.html
-   ============================================= */
-
-/* ── Intro: título alineado a la izquierda (mobile) / centrado (desktop) ── */
-.criaturas-intro {
-  padding: 40px var(--padding-h) 16px;
-  max-width: var(--max-ancho);
-  margin: 0 auto;
-}
-
-.criaturas-intro h1 {
-  font-size: clamp(32px, 7vw, 56px);
-  font-weight: 700;
-  color: var(--negro);
-  margin-bottom: 12px;
-  line-height: 1.1;
-}
-
-.criaturas-intro p {
-  font-size: 13px;
-  color: var(--gris-texto);
-  line-height: 1.7;
-  max-width: 480px;
-}
-
-/* ── MOBILE: lista en columna, cada fila = imagen+nombre a la izquierda / texto a la derecha ── */
-.criaturas-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  padding: 24px var(--padding-h) 64px;
-  max-width: var(--max-ancho);
-  margin: 0 auto;
-}
-
-/* Card: fila con visual izquierda + texto derecha */
-.criatura-card {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  align-items: start;
-  gap: 24px;
-  position: relative;
-}
-
-/* Bloque visual: nombre arriba + círculo + kanji superpuesto */
-.criatura-visual {
-  position: relative;
-  width: 200px;
-  flex-shrink: 0;
-}
-
-/* Nombre encima del círculo */
-.criatura-nombre {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--negro);
-  margin-bottom: 6px;
-  padding-left: 4px;
-  letter-spacing: 0.3px;
-}
-
-/* Círculo beige con imagen */
-.criatura-circulo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: var(--beige);
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
-
-.criatura-circulo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Kanji grande en rojo, superpuesto sobre el borde inferior-izquierdo del círculo */
-.criatura-kanji {
-  position: absolute;
-  bottom: -10px;
-  left: -8px;
-  font-size: clamp(52px, 12vw, 80px);
-  font-weight: 900;
-  color: var(--rojo);
-  line-height: 1;
-  z-index: 2;
-  pointer-events: none;
-  letter-spacing: -2px;
-}
-
-/* Texto de descripción */
-.criatura-texto {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-top: 28px; /* alinea con el círculo, debajo del nombre */
-}
-
-.criatura-texto p {
-  font-size: 13px;
-  color: var(--gris-texto);
-  line-height: 1.75;
-}
-
-/* Kanji decorativo de fondo (el fantasma grande gris que se ve detrás en el diseño) */
-.criatura-card::after {
-  content: attr(data-kanji-bg);
-  position: absolute;
-  right: -10px;
-  top: 40px;
-  font-size: clamp(80px, 18vw, 140px);
-  font-weight: 900;
-  color: var(--beige);
-  line-height: 1;
-  pointer-events: none;
-  z-index: 0;
-  letter-spacing: -4px;
-}
-
-/* ── DESKTOP: 4 columnas, imagen circular arriba, kanji grande encima, texto abajo ── */
-@media (min-width: 1024px) {
-
-  .criaturas-intro {
-    text-align: center;
-    padding: 56px 60px 24px;
-  }
-
-  .criaturas-intro p {
-    margin: 0 auto;
-  }
-
-  .criaturas-lista {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0 32px;
-    padding: 40px 60px 80px;
-    align-items: start;
-  }
-
-  /* Card: columna, imagen arriba, texto abajo */
-  .criatura-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    position: relative;
-  }
-
-  /* Sin kanji fantasma en desktop (queda raro en 4 col) */
-  .criatura-card::after {
-    display: none;
-  }
-
-  .criatura-visual {
-    width: 100%;
-  }
-
-  .criatura-nombre {
-    font-size: 15px;
-    margin-bottom: 8px;
-  }
-
-  /* Círculo más grande en desktop */
-  .criatura-circulo {
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%; /* cuadrado → círculo perfecto */
-    position: relative;
-  }
-
-  .criatura-circulo img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Kanji más grande, centrado en la parte inferior del círculo */
-  .criatura-kanji {
-    font-size: clamp(64px, 8vw, 110px);
-    bottom: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-  }
-
-  /* Texto debajo de la visual */
-  .criatura-texto {
-    padding-top: 20px;
-    width: 100%;
-  }
-
-  .criatura-texto p {
-    font-size: 13px;
-  }
-}
-
-/* ── Tablet: 2 columnas ── */
-@media (min-width: 640px) and (max-width: 1023px) {
-  .criaturas-lista {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px 32px;
-  }
-
-  .criatura-card {
-    grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .criatura-visual {
-    width: 100%;
-  }
-
-  .criatura-circulo {
-    width: 160px;
-    height: 160px;
-  }
-
-  .criatura-kanji {
-    font-size: 64px;
-  }
-
-  .criatura-texto {
-    padding-top: 8px;
-  }
-}
-
-/* =============================================
-   PÁGINA MAPA — mapa.html
-   ============================================= */
-
-.mapa-main {
-  padding: 0 0 64px;
-  max-width: var(--max-ancho);
-  margin: 0 auto;
-}
-
-/* ── Título ── */
-.mapa-titulo {
-  font-size: clamp(28px, 7vw, 52px);
-  font-weight: 700;
-  color: var(--negro);
-  padding: 40px var(--padding-h) 32px;
-  line-height: 1.1;
-}
-
-/* ── Bloque superior: imagen + texto ──
-   Mobile: columna (imagen arriba, texto abajo)
-   Desktop: fila (imagen izquierda, texto derecha)
-*/
-.mapa-superior {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 0 var(--padding-h);
-  margin-bottom: 48px;
-}
-
-/* Imagen del mapa con marco rojo y kanji superpuesto */
-.mapa-imagen-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  width: 100%;
-  max-width: 440px;
-}
-
-.mapa-imagen-marco {
-  border: 2px solid var(--rojo);
-  overflow: hidden;
-  flex: 1;
-}
-
-.mapa-imagen-marco img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Columna de kanji vertical pegada a la derecha del marco */
-.mapa-kanji-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 12px 0 12px 10px;
-  gap: 0;
-}
-
-.mapa-kanji-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 2px;
-}
-
-.mapa-kanji-texto {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: clamp(18px, 4vw, 26px);
-  font-weight: 700;
-  color: var(--negro);
-  letter-spacing: 3px;
-  line-height: 1;
-}
-
-.mapa-kanji-roma {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 10px;
-  color: var(--gris-texto);
-  letter-spacing: 1px;
-  line-height: 1;
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-/* Texto introductorio */
-.mapa-intro-texto {
-  background: var(--beige-claro);
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.mapa-intro-texto p {
-  font-size: 13px;
-  color: var(--gris-texto);
-  line-height: 1.75;
-}
-
-/* ── Lista de lugares ──
-   Mobile: columna simple
-   Desktop: columna en la mitad derecha
-*/
-.mapa-lugares {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 0 var(--padding-h);
-}
-
-.mapa-lugar-titulo {
-  font-size: clamp(18px, 4vw, 24px);
-  font-weight: 700;
-  color: var(--rojo);
-  margin-bottom: 8px;
-}
-
-.mapa-lugar-desc {
-  background: var(--beige);
-  border-radius: 16px;
-  padding: 16px 20px;
-}
-
-.mapa-lugar-desc p {
-  font-size: 13px;
-  color: var(--gris-texto);
-  line-height: 1.75;
-}
-
-/* ── TABLET (640px+) ── */
-@media (min-width: 640px) {
-  .mapa-imagen-wrap {
-    max-width: 500px;
-  }
-
-  .mapa-intro-texto {
-    padding: 28px 24px;
-  }
-
-  .mapa-intro-texto p {
-    font-size: 14px;
-  }
-}
-
-/* ── DESKTOP (1024px+) ──
-   Layout: columna izquierda = imagen + texto intro superpuesto
-           columna derecha   = lista de lugares
-*/
-@media (min-width: 1024px) {
-  .mapa-titulo {
-    padding: 48px 60px 40px;
-  }
-
-  .mapa-superior {
-    padding: 0 60px;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 40px;
-    margin-bottom: 0;
-  }
-
-  /* En desktop, imagen + texto intro van juntos en columna izq */
-  .mapa-imagen-wrap {
-    max-width: 390px;
-    flex-shrink: 0;
-  }
-
-  .mapa-imagen-marco {
-    min-height: 500px;
-  }
-
-  /* Texto intro aparece a la derecha de la imagen en desktop */
-  .mapa-intro-texto {
-    flex: 1;
-    background: var(--beige-claro);
-    padding: 32px 28px;
-    min-height: 300px;
-    justify-content: center;
-  }
-
-  /* En desktop: layout de 2 columnas para el bloque completo */
-  .mapa-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
-    column-gap: 60px;
-    padding: 0 60px 80px;
-    max-width: var(--max-ancho);
-    margin: 0 auto;
-  }
-
-  .mapa-titulo {
-    grid-column: 1 / -1;
-    padding: 48px 0 40px;
-  }
-
-  .mapa-superior {
-    grid-column: 1;
-    grid-row: 2;
-    padding: 0;
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 0;
-  }
-
-  .mapa-imagen-wrap {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .mapa-imagen-marco {
-    min-height: 400px;
-  }
-
-  .mapa-intro-texto {
-    background: var(--beige-claro);
-    padding: 28px 24px;
-  }
-
-  .mapa-lugares {
-    grid-column: 2;
-    grid-row: 2;
-    padding: 0;
-    align-self: start;
-    gap: 24px;
-  }
-
-  .mapa-kanji-texto {
-    font-size: 22px;
-  }
-
-  .mapa-kanji-roma {
-    font-size: 9px;
-  }
-}
-
-/* =============================================
-   PÁGINA MITOS — mitos.html
-   ============================================= */
-
-.mitos-main {
-  padding: 0 0 80px;
-  max-width: var(--max-ancho);
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-/* ── Título ── */
-.mitos-titulo {
-  font-size: clamp(28px, 7vw, 52px);
-  font-weight: 700;
-  color: var(--negro);
-  padding: 40px var(--padding-h) 40px;
-  line-height: 1.1;
-  text-align: left;
-}
-
-/* ── Grid: mobile = columna, desktop = 2 col ── */
-.mitos-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
-  padding: 0 var(--padding-h);
-}
-
-/* ── Card ──
-   Posición relativa para anclar el kanji y el círculo
-*/
-.mito-card {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-
-/* Kanji vertical negro a la izquierda de la card normal */
-.mito-kanji {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: clamp(14px, 3.5vw, 20px);
-  font-weight: 700;
-  color: var(--negro);
-  letter-spacing: 4px;
-  line-height: 1;
-  flex-shrink: 0;
-  align-self: flex-start;
-  padding: 4px 6px 0 0;
-  white-space: nowrap;
-}
-
-/* Card invertida: kanji va a la derecha */
-.mito-card--invertida {
-  flex-direction: row;
-}
-
-.mito-card--invertida .mito-kanji {
-  order: 2;
-  padding: 4px 0 0 6px;
-  align-self: flex-end;
-}
-
-/* ── Inner: caja roja con imagen sobresaliendo ── */
-.mito-inner {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: var(--rojo);
-  border-radius: 20px;
-  overflow: visible; /* permite que el círculo sobresalga */
-  min-height: 280px;
-}
-
-/* ── Círculo con imagen ── */
-.mito-circulo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: var(--beige);
-  overflow: hidden;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 2;
-  /* Sobresale hacia la izquierda */
-  margin-left: -60px;
-  margin-right: 0;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.20);
-}
-
-.mito-circulo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Card invertida: círculo sale por la derecha */
-.mito-card--invertida .mito-inner {
-  flex-direction: row-reverse;
-}
-
-.mito-card--invertida .mito-circulo {
-  margin-left: 0;
-  margin-right: -60px;
-}
-
-/* ── Contenido de texto dentro de la card ── */
-.mito-contenido {
-  flex: 1;
-  padding: 28px 28px 28px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-align: right; /* texto alineado a la derecha en card normal */
-}
-
-.mito-card--invertida .mito-contenido {
-  text-align: left;
-  padding: 28px 20px 28px 28px;
-}
-
-.mito-nombre {
-  font-size: clamp(16px, 4vw, 22px);
-  font-weight: 700;
-  color: var(--blanco);
-  line-height: 1.2;
-  margin-bottom: 4px;
-}
-
-.mito-contenido p {
-  font-size: 12px;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.7;
-}
-
-/* ── TABLET (640px+): círculos más grandes ── */
-@media (min-width: 640px) {
-  .mito-circulo {
-    width: 240px;
-    height: 240px;
-    margin-left: -70px;
-  }
-
-  .mito-card--invertida .mito-circulo {
-    margin-left: 0;
-    margin-right: -70px;
-  }
-
-  .mito-contenido p {
-    font-size: 13px;
-  }
-
-  .mitos-grid {
-    gap: 64px;
-  }
-}
-
-/* ── DESKTOP (1024px+): 2 columnas lado a lado ── */
-@media (min-width: 1024px) {
-  .mitos-titulo {
-    text-align: center;
-    padding: 56px 60px 48px;
-  }
-
-  .mitos-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 0 60px;
-    align-items: start;
-  }
-
-  .mito-card {
-    flex-direction: row;
-  }
-
-  /* En desktop la card normal: kanji izq + inner */
-  .mito-card .mito-kanji {
-    font-size: 18px;
-    letter-spacing: 6px;
-  }
-
-  .mito-card--invertida .mito-kanji {
-    font-size: 18px;
-    letter-spacing: 6px;
-  }
-
-  .mito-inner {
-    min-height: 340px;
-  }
-
-  .mito-circulo {
-    width: 220px;
-    height: 220px;
-    margin-left: -65px;
-  }
-
-  .mito-card--invertida .mito-circulo {
-    margin-left: 0;
-    margin-right: -65px;
-  }
-
-  .mito-contenido {
-    padding: 32px 32px 32px 20px;
-    gap: 14px;
-  }
-
-  .mito-card--invertida .mito-contenido {
-    padding: 32px 20px 32px 32px;
-  }
-
-  .mito-nombre {
-    font-size: 22px;
-  }
-
-  .mito-contenido p {
-    font-size: 13px;
-  }
-}
-
-/* =============================================
-   PÁGINA QUIZ — quiz.html
-   ============================================= */
-
-/* contenedor principal con overflow hidden para kanji que se sale */
-.quiz-main {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 100px;
-  min-height: 90vh;
-}
-
-/* bonsai: imagen gris grande abajo-izquierda, detrás de todo */
-.quiz-bonsai-bg {
-  position: absolute;
-  bottom: -60px;
-  left: -60px;
-  width: 85vw;
-  max-width: 620px;
-  opacity: 0.12;
-  pointer-events: none;
-  z-index: 0;
-}
-.quiz-bonsai-bg img { width: 100%; height: auto; display: block; }
-
-/* ── MOBILE ──
-   Título centrado arriba, debajo la card centrada
-   con kanji deco sobresaliendo por la derecha (absolute)
-*/
-
-.quiz-header {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px var(--padding-h) 28px;
-}
-
-.quiz-kanji-titulo {
-  font-size: clamp(48px, 14vw, 96px);
-  font-weight: 700;
-  color: var(--rojo);
-  line-height: 1;
-  letter-spacing: 2px;
-  margin-bottom: 6px;
-}
-
-.quiz-subtitulo {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: var(--negro);
-}
-
-/* wrapper que da contexto de posición al kanji absoluto */
-.quiz-centro {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  padding: 0 var(--padding-h);
-}
-
-/* card roja: ocupa casi todo el ancho en mobile, centrada */
-.quiz-card {
-  position: relative;
-  background: var(--rojo);
-  border-radius: 40px;
-  padding: 40px 36px 40px;
-  width: 100%;
-  max-width: 500px;
-}
-
-/* kanji deco: absoluto, pegado al borde derecho de .quiz-centro,
-   centrado verticalmente, parcialmente fuera de la card */
-.quiz-kanji-deco {
-  position: absolute;
-  right: -4px;           /* sale por la derecha de .quiz-centro */
-  top: 50%;
-  transform: translateY(-60%);
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: clamp(28px, 7vw, 52px);
-  font-weight: 900;
-  color: var(--rojo);
-  line-height: 1;
-  letter-spacing: 4px;
-  pointer-events: none;
-  z-index: 2;
-  /* los BR del HTML generan el salto de carácter vertical */
-}
-
-/* ── Formulario ── */
-.quiz-form {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.quiz-pregunta {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* caja beige con texto rojo */
-.quiz-pregunta-texto {
-  background: var(--beige);
-  color: var(--rojo);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 10px 16px;
-  border-radius: 10px;
-  text-align: center;
-  line-height: 1.4;
-}
-
-/* opciones: radio custom + label blanco */
-.quiz-opcion {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  color: var(--blanco);
-  font-size: 13px;
-  font-weight: 500;
-  padding-left: 4px;
-  user-select: none;
-}
-
-.quiz-opcion input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.quiz-radio-custom {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.7);
-  flex-shrink: 0;
-  transition: border-color 0.2s;
-}
-
-.quiz-opcion input[type="radio"]:checked + .quiz-radio-custom {
-  border-color: var(--blanco);
+header {
+  position: sticky; top: 0; z-index: 100;
   background: var(--blanco);
-  box-shadow: inset 0 0 0 4px var(--rojo);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px var(--ph);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+header .logo  { width: 120px; }
+header nav    { display: none; }
+
+header menu   { display: flex; align-items: center; gap: 18px; padding: 0; }
+header menu li { list-style: none; }
+header menu img { width: 22px; height: 22px; }
+header menu a,
+header menu button,
+.btn-menu {
+  background: none; border: none; cursor: pointer; padding: 0;
+  display: flex; align-items: center;
 }
 
-.quiz-opcion:hover .quiz-radio-custom {
-  border-color: var(--blanco);
+@media (min-width: 1024px) {
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 20px var(--ph);
+  }
+  header .logo { width: 130px; }
+  header nav   { display: flex; justify-content: center; align-items: center; }
+  header nav ul { display: flex; gap: 36px; }
+  header nav ul li a {
+    font-size: 13px; font-weight: 500; letter-spacing: .3px;
+    position: relative; transition: color .2s;
+  }
+  header nav ul li a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 2px; background: var(--rojo);
+    transition: width .25s ease;
+  }
+  header nav ul li a:hover       { color: var(--rojo); }
+  header nav ul li a:hover::after { width: 100%; }
+  .btn-menu { display: none; }
 }
 
-/* botón negro redondeado RESULTADOS */
-.quiz-btn {
-  background: var(--negro);
-  color: var(--blanco);
-  border: none;
-  border-radius: 40px;
-  padding: 14px 32px;
-  font-family: var(--fuente-sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  cursor: pointer;
-  align-self: center;
-  margin-top: 8px;
-  transition: background 0.2s, transform 0.15s;
+
+
+footer { background: var(--beige); color: var(--negro); }
+
+/* barra roja de redes */
+.footer-redes {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 24px; background: var(--rojo); padding: 16px var(--ph);
 }
-.quiz-btn:hover  { background: #2a2a2a; transform: translateY(-2px); }
-.quiz-btn:active { transform: translateY(0); }
+.footer-redes a          { display: flex; align-items: center; opacity: .9; transition: opacity .2s; }
+.footer-redes a:hover    { opacity: 1; }
+.footer-redes img        { width: 22px; height: 22px; filter: brightness(0) invert(1); }
+
+
+.footer-cuerpo {
+  display: flex; flex-direction: column; gap: 32px;
+  padding: 32px var(--ph) 0;
+}
+@media (min-width: 1024px) {
+  .footer-cuerpo {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 40px; max-width: var(--max); margin: 0 auto;
+    padding: 40px var(--ph);
+  }
+}
+
+.footer-info .logo        { width: 110px; margin-bottom: 16px; }
+.footer-info > p          { font-size: 12px; color: var(--gris); max-width: 340px; line-height: 1.7; margin-bottom: 28px; }
+
+footer nav h4,
+footer section h4         { font-size: 22px; font-weight: 700; color: var(--negro); margin-bottom: 12px; }
+footer nav ul             { display: flex; flex-direction: column; gap: 10px; }
+footer nav ul li a,
+footer section p          { font-size: 12px; color: var(--gris); line-height: 1.7; transition: color .2s; }
+footer nav ul li a:hover  { color: var(--negro); }
+footer section            { margin-bottom: 24px; }
+footer section p          { max-width: 340px; }
+
+.footer-bonsai            { width: 100%; max-width: 280px; opacity: .3; margin-top: 8px; }
+
+.footer-legal {
+  display: flex; flex-wrap: wrap; gap: 12px 20px;
+  padding: 20px var(--ph);
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+.footer-legal li a        { font-size: 11px; color: var(--gris); transition: color .2s; }
+.footer-legal li a:hover  { color: var(--negro); }
+
+
+
+
+.hero                     { position: relative; overflow: hidden; background: var(--blanco); }
+.hero > img               { width: 100%; height: 70vw; max-height: 520px; object-fit: cover; object-position: center top; }
+.hero > p {
+  position: absolute; top: 30%; right: var(--ph); max-width: 220px;
+  background: var(--blanco); border: 2px solid var(--rojo);
+  padding: 14px 16px; font-size: 13px; font-weight: 500; line-height: 1.5;
+}
+.hero search              { display: flex; flex-direction: column; gap: 8px; padding: 20px var(--ph) 0; }
+.hero search label        { font-size: 13px; color: var(--gris); }
+.hero search input[type="search"] {
+  width: 100%; border: none; border-bottom: 2px solid var(--negro);
+  padding: 8px 0; font-family: var(--sans); font-size: 14px;
+  outline: none; background: transparent;
+}
+.hero search input[type="search"]:focus { border-bottom-color: var(--rojo); }
+.hero aside               { margin: 24px var(--ph); background: var(--beige); border-radius: var(--radio); padding: 24px 20px; }
+.hero aside h2            { font-size: clamp(20px,5vw,28px); font-weight: 700; margin-bottom: 14px; line-height: 1.2; }
+.hero aside p             { font-size: 13px; color: var(--gris); margin-bottom: 10px; line-height: 1.7; }
+.hero aside p:last-child  { margin-bottom: 0; }
+
+@media (min-width: 640px) {
+  .hero > img             { height: 55vw; }
+  .hero > p               { max-width: 280px; font-size: 14px; padding: 18px 20px; }
+  .hero search            { flex-direction: row; align-items: center; gap: 16px; padding-top: 28px; }
+  .hero search label      { white-space: nowrap; font-size: 14px; }
+}
+@media (min-width: 1024px) {
+  .hero                   { min-height: 600px; }
+  .hero > img             { width: 55%; height: 600px; max-height: none; float: left; }
+  .hero > p               { top: 120px; max-width: 340px; font-size: 15px; }
+  .hero search            { position: absolute; bottom: 220px; right: var(--ph); width: 380px; padding: 16px 20px; flex-direction: column; gap: 8px; background: var(--blanco); }
+  .hero aside             { position: absolute; bottom: 40px; right: var(--ph); width: 380px; margin: 0; }
+  .hero::after            { content: ''; display: table; clear: both; }
+}
+
+
+
+
+.seccion-dioses,
+.seccion-criaturas,
+.seccion-mitos,
+.seccion-mapa             { padding: 40px var(--ph); border-top: 1px solid rgba(0,0,0,.06); }
+.seccion-mapa             { background: var(--blanco); }
+
+/* ── Dioses index: grid 2→4 col con imágenes ── */
+.seccion-dioses > p       { font-size: 13px; color: var(--gris); max-width: 400px; margin-bottom: 28px; line-height: 1.7; }
+.seccion-dioses ul        { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.seccion-dioses li        { position: relative; border-radius: var(--radio); overflow: hidden; aspect-ratio: 3/4; cursor: pointer; transition: transform .25s, box-shadow .25s; }
+.seccion-dioses li img    { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.seccion-dioses li:hover  { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(139,26,26,.2); }
+.seccion-dioses li:hover img { transform: scale(1.04); }
+.seccion-dioses li h3,
+.seccion-dioses li p      { position: absolute; color: var(--blanco); text-shadow: 0 1px 4px rgba(0,0,0,.6); }
+.seccion-dioses li h3     { bottom: 30px; left: 14px; font-size: clamp(16px,4vw,22px); font-weight: 700; }
+.seccion-dioses li p      { bottom: 12px; left: 14px; font-size: 12px; font-weight: 500; }
+
+/* ── Criaturas index: grid 2→4 col con círculos ── */
+.seccion-criaturas ul     { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.seccion-criaturas li     { background: var(--beige-claro); border-radius: var(--radio); overflow: hidden; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: transform .25s, box-shadow .25s; }
+.seccion-criaturas li:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+.seccion-criaturas li img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.seccion-criaturas li h3  { font-size: 15px; font-weight: 700; }
+.seccion-criaturas li p   { font-size: 12px; color: var(--gris); line-height: 1.6; }
+
+/* ── Mitos index ── */
+.seccion-mitos article    { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 20px; margin-top: 32px; position: relative; }
+.seccion-mitos article img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; }
+.seccion-mitos article h3 { font-size: clamp(16px,4vw,22px); font-weight: 700; margin-bottom: 10px; }
+.seccion-mitos article p  { font-size: 12px; color: var(--gris); line-height: 1.7; }
+
+/* ── Mapa index ── */
+.seccion-mapa > img       { width: 100%; max-width: 400px; border: 2px solid var(--rojo); border-radius: var(--radio); margin: 24px 0; }
+.seccion-mapa article     { margin-bottom: 16px; }
+.seccion-mapa article h3  { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.seccion-mapa article p   { font-size: 13px; color: var(--gris); }
+
+/* ── Quiz index (banner) ── */
+.seccion-quiz             { margin: 20px var(--ph) 40px; }
+.seccion-quiz a           { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: var(--beige); border-radius: var(--radio); padding: 36px 20px; text-align: center; transition: background .2s, transform .2s; cursor: pointer; }
+.seccion-quiz a:hover     { background: var(--beige-claro); transform: translateY(-2px); }
+.seccion-quiz .quiz-kanji { font-size: clamp(32px,10vw,56px); font-weight: 700; color: var(--rojo); letter-spacing: 4px; line-height: 1; }
+.seccion-quiz a > p:last-child { font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
+
+/* Tablet index */
+@media (min-width: 640px) {
+  .seccion-dioses ul,
+  .seccion-criaturas ul   { gap: 16px; }
+  .seccion-mitos article img { width: 180px; height: 180px; }
+  .seccion-mapa           { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px 40px; align-items: start; }
+  .seccion-mapa > h2      { grid-column: 1 / -1; }
+  .seccion-mapa > img     { grid-row: 2 / 5; grid-column: 1; margin: 0; max-width: 100%; }
+  .seccion-mapa article   { grid-column: 2; margin-bottom: 0; padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,.1); }
+  .seccion-mapa article:last-of-type { border-bottom: none; }
+}
+
+/* Desktop index */
+@media (min-width: 1024px) {
+  .seccion-dioses ul,
+  .seccion-criaturas ul   { grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .seccion-mitos article  { gap: 40px; max-width: var(--max); }
+  .seccion-mitos article img { width: 220px; height: 220px; }
+  .seccion-mitos article h3  { font-size: 28px; }
+  .seccion-mitos article p   { font-size: 14px; }
+  .seccion-quiz a            { max-width: 800px; margin: 0 auto; }
+}
+
+/* ══════════════════════════════════════════════
+   PÁGINA DIOSES — dioses.html
+   ══════════════════════════════════════════════ */
+.dioses-intro             { text-align: center; padding: 48px var(--ph) 32px; max-width: var(--max); margin: 0 auto; }
+.dioses-intro h1          { font-size: clamp(32px,7vw,56px); font-weight: 700; margin-bottom: 16px; line-height: 1.1; }
+.dioses-intro p           { font-size: 14px; color: var(--gris); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+
+.dioses-lista             { display: grid; grid-template-columns: 1fr; gap: 40px 24px; padding: 16px var(--ph) 64px; max-width: var(--max); margin: 0 auto; }
+@media (min-width: 600px)  { .dioses-lista { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .dioses-lista { grid-template-columns: repeat(4,1fr); gap: 32px 24px; padding: 16px 60px 80px; } }
+
+.dios-card                { display: flex; flex-direction: column; gap: 20px; }
+.dios-imagen-wrap         { display: flex; flex-direction: row; align-items: flex-start; gap: 6px; width: 100%; }
+.dios-imagen-marco        { position: relative; flex: 1; border: 2px solid var(--rojo); border-radius: 4px; overflow: hidden; background: var(--negro); }
+.dios-imagen-marco img    { width: 100%; aspect-ratio: 1; object-fit: cover; opacity: .9; transition: opacity .3s; }
+.dios-imagen-marco:hover img { opacity: 1; }
+.dios-nombre              { position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,.92); font-size: 11px; font-weight: 600; padding: 4px 10px; border: 1px solid rgba(0,0,0,.12); border-radius: 2px; z-index: 2; white-space: nowrap; letter-spacing: .4px; }
+.dios-kanji               { writing-mode: vertical-rl; font-size: clamp(24px,3vw,38px); font-weight: 700; color: var(--negro); opacity: .75; letter-spacing: 2px; line-height: 1; flex-shrink: 0; align-self: flex-start; padding-top: 2px; }
+.dios-texto               { display: flex; flex-direction: column; gap: 10px; }
+.dios-texto p             { font-size: 13px; color: var(--gris); line-height: 1.75; }
+
+/* ══════════════════════════════════════════════
+   PÁGINA CRIATURAS — criaturas.html
+   ══════════════════════════════════════════════ */
+.criaturas-intro          { padding: 40px var(--ph) 16px; max-width: var(--max); margin: 0 auto; }
+.criaturas-intro h1       { font-size: clamp(32px,7vw,56px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; }
+.criaturas-intro p        { font-size: 13px; color: var(--gris); line-height: 1.7; max-width: 480px; }
+
+.criaturas-lista          { display: flex; flex-direction: column; gap: 48px; padding: 24px var(--ph) 64px; max-width: var(--max); margin: 0 auto; }
+
+/* mobile: card = fila visual izq + texto der */
+.criatura-card            { display: grid; grid-template-columns: 200px 1fr; align-items: start; gap: 24px; position: relative; }
+.criatura-visual          { position: relative; width: 200px; flex-shrink: 0; }
+.criatura-nombre          { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; padding-left: 4px; }
+.criatura-circulo         { width: 160px; height: 160px; border-radius: 50%; background: var(--beige); overflow: hidden; position: relative; z-index: 1; }
+.criatura-circulo img     { width: 100%; height: 100%; object-fit: cover; }
+.criatura-kanji           { position: absolute; bottom: -10px; left: -8px; font-size: clamp(52px,12vw,80px); font-weight: 900; color: var(--rojo); line-height: 1; z-index: 2; pointer-events: none; letter-spacing: -2px; }
+.criatura-texto           { display: flex; flex-direction: column; gap: 10px; padding-top: 28px; }
+.criatura-texto p         { font-size: 13px; color: var(--gris); line-height: 1.75; }
+
+/* tablet: 2 columnas apiladas */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .criaturas-lista        { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 32px; }
+  .criatura-card          { grid-template-columns: 1fr; display: flex; flex-direction: column; gap: 16px; }
+  .criatura-visual        { width: 100%; }
+  .criatura-circulo       { width: 160px; height: 160px; }
+  .criatura-kanji         { font-size: 64px; }
+  .criatura-texto         { padding-top: 8px; }
+}
+
+/* desktop: 4 columnas */
+@media (min-width: 1024px) {
+  .criaturas-intro        { text-align: center; padding: 56px var(--ph) 24px; }
+  .criaturas-intro p      { margin: 0 auto; }
+  .criaturas-lista        { display: grid; grid-template-columns: repeat(4,1fr); gap: 0 32px; padding: 40px 60px 80px; align-items: start; }
+  .criatura-card          { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; position: relative; }
+  .criatura-visual        { width: 100%; }
+  .criatura-nombre        { font-size: 15px; margin-bottom: 8px; }
+  .criatura-circulo       { width: 100%; height: 0; padding-bottom: 100%; position: relative; }
+  .criatura-circulo img   { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .criatura-kanji         { font-size: clamp(64px,8vw,110px); bottom: -16px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+  .criatura-texto         { padding-top: 20px; width: 100%; }
+}
+
+/* ══════════════════════════════════════════════
+   PÁGINA MAPA — mapa.html
+   ══════════════════════════════════════════════ */
+.mapa-main                { position: relative; padding: 0 0 64px; max-width: var(--max); margin: 0 auto; }
+.mapa-titulo              { font-size: clamp(28px,7vw,52px); font-weight: 700; line-height: 1.1; padding: 40px var(--ph) 32px; }
+
+/* mobile: columna */
+.mapa-superior            { display: flex; flex-direction: column; gap: 0; padding: 0 var(--ph); margin-bottom: 48px; }
+.mapa-imagen-wrap         { position: relative; display: flex; flex-direction: row; align-items: stretch; width: 100%; max-width: 440px; }
+.mapa-imagen-marco        { border: 2px solid var(--rojo); overflow: hidden; flex: 1; }
+.mapa-imagen-marco img    { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.mapa-kanji-col           { display: flex; flex-direction: column; justify-content: space-between; padding: 12px 0 12px 10px; }
+.mapa-kanji-item          { display: flex; flex-direction: row; align-items: flex-start; gap: 2px; }
+.mapa-kanji-texto         { writing-mode: vertical-rl; font-size: clamp(18px,4vw,26px); font-weight: 700; letter-spacing: 3px; line-height: 1; }
+.mapa-kanji-roma          { writing-mode: vertical-rl; font-size: 10px; color: var(--gris); letter-spacing: 1px; line-height: 1; align-self: flex-start; margin-top: 4px; }
+
+.mapa-intro-texto         { background: var(--beige-claro); padding: 24px 20px; display: flex; flex-direction: column; gap: 14px; }
+.mapa-intro-texto p       { font-size: 13px; color: var(--gris); line-height: 1.75; }
+
+.mapa-lugares             { display: flex; flex-direction: column; gap: 20px; padding: 0 var(--ph); }
+.mapa-lugar-titulo        { font-size: clamp(18px,4vw,24px); font-weight: 700; color: var(--rojo); margin-bottom: 8px; }
+.mapa-lugar-desc          { background: var(--beige); border-radius: 16px; padding: 16px 20px; }
+.mapa-lugar-desc p        { font-size: 13px; color: var(--gris); line-height: 1.75; }
+
+/* desktop: 2 columnas */
+@media (min-width: 1024px) {
+  .mapa-main              { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; column-gap: 60px; padding: 0 60px 80px; max-width: var(--max); }
+  .mapa-titulo            { grid-column: 1 / -1; padding: 48px 0 40px; }
+  .mapa-superior          { grid-column: 1; grid-row: 2; padding: 0; flex-direction: column; gap: 0; margin-bottom: 0; }
+  .mapa-imagen-wrap       { max-width: 100%; width: 100%; }
+  .mapa-imagen-marco      { min-height: 400px; }
+  .mapa-intro-texto       { padding: 28px 24px; }
+  .mapa-lugares           { grid-column: 2; grid-row: 2; padding: 0; align-self: start; gap: 24px; }
+  .mapa-kanji-texto       { font-size: 22px; }
+  .mapa-kanji-roma        { font-size: 9px; }
+}
+
+/* ══════════════════════════════════════════════
+   PÁGINA MITOS — mitos.html
+   ══════════════════════════════════════════════ */
+.mitos-main               { padding: 0 0 80px; max-width: var(--max); margin: 0 auto; overflow: hidden; }
+.mitos-titulo             { font-size: clamp(28px,7vw,52px); font-weight: 700; line-height: 1.1; padding: 40px var(--ph) 40px; text-align: left; }
+
+.mitos-grid               { display: flex; flex-direction: column; gap: 56px; padding: 0 var(--ph); }
+
+/* card: kanji izq + inner roja */
+.mito-card                { position: relative; display: flex; flex-direction: row; align-items: stretch; }
+.mito-kanji               { writing-mode: vertical-rl; font-size: clamp(14px,3.5vw,20px); font-weight: 700; letter-spacing: 4px; line-height: 1; flex-shrink: 0; align-self: flex-start; padding: 4px 6px 0 0; white-space: nowrap; }
+.mito-card--invertida .mito-kanji { order: 2; padding: 4px 0 0 6px; align-self: flex-end; }
+
+.mito-inner               { position: relative; flex: 1; display: flex; flex-direction: row; align-items: center; background: var(--rojo); border-radius: 20px; overflow: visible; min-height: 280px; }
+.mito-card--invertida .mito-inner { flex-direction: row-reverse; }
+
+.mito-circulo             { width: 200px; height: 200px; border-radius: 50%; background: var(--beige); overflow: hidden; flex-shrink: 0; position: relative; z-index: 2; margin-left: -60px; box-shadow: 0 4px 20px rgba(0,0,0,.2); }
+.mito-card--invertida .mito-circulo { margin-left: 0; margin-right: -60px; }
+.mito-circulo img         { width: 100%; height: 100%; object-fit: cover; }
+
+.mito-contenido           { flex: 1; padding: 28px 28px 28px 20px; display: flex; flex-direction: column; gap: 12px; text-align: right; }
+.mito-card--invertida .mito-contenido { text-align: left; padding: 28px 20px 28px 28px; }
+.mito-nombre              { font-size: clamp(16px,4vw,22px); font-weight: 700; color: var(--blanco); line-height: 1.2; margin-bottom: 4px; }
+.mito-contenido p         { font-size: 12px; color: rgba(255,255,255,.92); line-height: 1.7; }
+
+@media (min-width: 640px) {
+  .mito-circulo           { width: 240px; height: 240px; margin-left: -70px; }
+  .mito-card--invertida .mito-circulo { margin-left: 0; margin-right: -70px; }
+  .mito-contenido p       { font-size: 13px; }
+  .mitos-grid             { gap: 64px; }
+}
+@media (min-width: 1024px) {
+  .mitos-titulo           { text-align: center; padding: 56px 60px 48px; }
+  .mitos-grid             { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 0 60px; align-items: start; }
+  .mito-inner             { min-height: 340px; }
+  .mito-circulo           { width: 220px; height: 220px; margin-left: -65px; }
+  .mito-card--invertida .mito-circulo { margin-left: 0; margin-right: -65px; }
+  .mito-contenido         { padding: 32px 32px 32px 20px; gap: 14px; }
+  .mito-card--invertida .mito-contenido { padding: 32px 20px 32px 32px; }
+  .mito-nombre            { font-size: 22px; }
+  .mito-contenido p       { font-size: 13px; }
+  .mito-kanji,
+  .mito-card--invertida .mito-kanji { font-size: 18px; letter-spacing: 6px; }
+}
+
+/* ══════════════════════════════════════════════
+   PÁGINA QUIZ — quiz.html
+   ══════════════════════════════════════════════ */
+.quiz-main                { position: relative; overflow: hidden; padding-bottom: 100px; min-height: 90vh; }
+
+/* bonsai fondo */
+.quiz-bonsai-bg           { position: absolute; bottom: -60px; left: -60px; width: 85vw; max-width: 620px; opacity: .12; pointer-events: none; z-index: 0; }
+.quiz-bonsai-bg img       { width: 100%; height: auto; display: block; }
+
+/* encabezado */
+.quiz-header              { position: relative; z-index: 1; text-align: center; padding: 40px var(--ph) 28px; }
+.quiz-kanji-titulo        { font-size: clamp(48px,14vw,96px); font-weight: 700; color: var(--rojo); line-height: 1; letter-spacing: 2px; margin-bottom: 6px; }
+.quiz-subtitulo           { font-size: 13px; font-weight: 600; letter-spacing: 3px; color: var(--negro); }
+
+/* centro: card + kanji deco absoluto */
+.quiz-centro              { position: relative; z-index: 1; display: flex; justify-content: center; padding: 0 var(--ph); }
+.quiz-card                { position: relative; background: var(--rojo); border-radius: 40px; padding: 40px 36px; width: 100%; max-width: 500px; }
+.quiz-kanji-deco          { position: absolute; right: -4px; top: 50%; transform: translateY(-60%); writing-mode: vertical-rl; text-orientation: upright; font-size: clamp(28px,7vw,52px); font-weight: 900; color: var(--rojo); line-height: 1; letter-spacing: 4px; pointer-events: none; z-index: 2; }
+
+/* formulario */
+.quiz-form                { display: flex; flex-direction: column; gap: 32px; }
+.quiz-pregunta            { display: flex; flex-direction: column; gap: 14px; }
+.quiz-pregunta-texto      { background: var(--beige); color: var(--rojo); font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 10px; text-align: center; line-height: 1.4; }
+.quiz-opcion              { display: flex; align-items: center; gap: 12px; cursor: pointer; color: var(--blanco); font-size: 13px; font-weight: 500; padding-left: 4px; user-select: none; }
+.quiz-opcion input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+.quiz-radio-custom        { width: 20px; height: 20px; border-radius: 50%; border: 2px solid rgba(255,255,255,.7); flex-shrink: 0; transition: border-color .2s; }
+.quiz-opcion input[type="radio"]:checked + .quiz-radio-custom { border-color: var(--blanco); background: var(--blanco); box-shadow: inset 0 0 0 4px var(--rojo); }
+.quiz-opcion:hover .quiz-radio-custom { border-color: var(--blanco); }
+.quiz-btn                 { background: var(--negro); color: var(--blanco); border: none; border-radius: 40px; padding: 14px 32px; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 2px; cursor: pointer; align-self: center; margin-top: 8px; transition: background .2s, transform .15s; }
+.quiz-btn:hover           { background: #2a2a2a; transform: translateY(-2px); }
+.quiz-btn:active          { transform: translateY(0); }
 
 /* resultado */
-.quiz-resultado {
-  position: relative;
-  z-index: 1;
-  margin: 28px auto 0;
-  max-width: 500px;
-  background: var(--beige);
-  border-radius: 16px;
-  padding: 20px 28px;
-  text-align: center;
-}
-.quiz-resultado p {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--negro);
-  line-height: 1.5;
-}
+.quiz-resultado           { position: relative; z-index: 1; margin: 28px auto 0; max-width: 500px; background: var(--beige); border-radius: 16px; padding: 20px 28px; text-align: center; }
+.quiz-resultado p         { font-size: 14px; font-weight: 600; color: var(--negro); line-height: 1.5; }
 
-/* ── DESKTOP (1024px+) ──
-   Título: arriba-izquierda
-   Card: centrada horizontalmente en el espacio restante
-   Kanji deco: absoluto saliendo por la derecha de la card
-   Bonsai: abajo-izquierda, más grande
-*/
 @media (min-width: 1024px) {
-  .quiz-main {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    grid-template-rows: auto 1fr;
-    padding: 0 60px 100px;
-    align-items: start;
-    column-gap: 0;
-  }
-
-  .quiz-bonsai-bg {
-    width: 45%;
-    max-width: 580px;
-    bottom: -80px;
-    left: -20px;
-  }
-
-  /* título: col izquierda, alineado a la izquierda */
-  .quiz-header {
-    grid-column: 1;
-    grid-row: 1;
-    text-align: left;
-    padding: 48px 0 0;
-  }
-
-  .quiz-kanji-titulo { font-size: 88px; }
-
-  /* card + kanji: col derecha, toda la altura */
-  .quiz-centro {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    justify-content: center;
-    padding: 48px 0 0;
-    align-items: flex-start;
-  }
-
-  .quiz-card {
-    max-width: 400px;
-  }
-
-  /* kanji sale por la derecha de la card en desktop */
-  .quiz-kanji-deco {
-    right: -8px;
-    font-size: 48px;
-  }
-
-  /* resultado bajo el título */
-  .quiz-resultado {
-    grid-column: 1;
-    grid-row: 2;
-    margin: 24px 0 0;
-    max-width: 300px;
-  }
+  .quiz-main              { display: grid; grid-template-columns: 320px 1fr; grid-template-rows: auto auto; padding: 0 60px 100px; align-items: start; }
+  .quiz-bonsai-bg         { width: 45%; max-width: 580px; bottom: -80px; left: -20px; }
+  .quiz-header            { grid-column: 1; grid-row: 1; text-align: left; padding: 48px 0 0; }
+  .quiz-kanji-titulo      { font-size: 88px; }
+  .quiz-centro            { grid-column: 2; grid-row: 1 / 3; justify-content: center; padding: 48px 0 0; align-items: flex-start; }
+  .quiz-card              { max-width: 380px; }
+  .quiz-kanji-deco        { right: -8px; font-size: 48px; }
+  .quiz-resultado         { grid-column: 1; grid-row: 2; margin: 24px 0 0; max-width: 300px; }
 }
-
-/* tablet */
 @media (min-width: 600px) and (max-width: 1023px) {
-  .quiz-card { max-width: 460px; }
-  .quiz-kanji-deco { font-size: 36px; right: -2px; }
+  .quiz-card              { max-width: 460px; }
+  .quiz-kanji-deco        { font-size: 36px; right: -2px; }
 }
