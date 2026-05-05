@@ -1760,3 +1760,279 @@ input:focus-visible {
     font-size: 13px;
   }
 }
+
+/* =============================================
+   PÁGINA QUIZ — quiz.html
+   ============================================= */
+
+.quiz-main {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 80px;
+  min-height: 90vh;
+}
+
+/* ── Bonsai de fondo ── */
+.quiz-bonsai-bg {
+  position: absolute;
+  bottom: 0;
+  left: -60px;
+  width: 70%;
+  max-width: 520px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.quiz-bonsai-bg img {
+  width: 100%;
+  height: auto;
+}
+
+/* ── Título: kanji rojo + subtítulo ── */
+.quiz-header {
+  position: relative;
+  z-index: 1;
+  padding: 40px var(--padding-h) 24px;
+  text-align: center;
+}
+
+.quiz-kanji-titulo {
+  font-size: clamp(48px, 14vw, 96px);
+  font-weight: 700;
+  color: var(--rojo);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.quiz-subtitulo {
+  font-size: clamp(13px, 3vw, 16px);
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--negro);
+  text-transform: uppercase;
+}
+
+/* ── Bloque central: card + kanji deco ── */
+.quiz-centro {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-h);
+  gap: 0;
+}
+
+/* ── Card roja ── */
+.quiz-card {
+  background: var(--rojo);
+  border-radius: 32px;
+  padding: 36px 28px 32px;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Formulario ── */
+.quiz-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Cada bloque de pregunta */
+.quiz-pregunta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Caja beige con texto de la pregunta en rojo */
+.quiz-pregunta-texto {
+  background: var(--beige);
+  color: var(--rojo);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Opciones con radio custom */
+.quiz-opcion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: var(--blanco);
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 4px;
+  user-select: none;
+}
+
+/* Ocultar radio nativo */
+.quiz-opcion input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Radio custom: círculo blanco vacío */
+.quiz-radio-custom {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.8);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+/* Radio seleccionado: relleno blanco */
+.quiz-opcion input[type="radio"]:checked + .quiz-radio-custom {
+  background: var(--blanco);
+  border-color: var(--blanco);
+  box-shadow: inset 0 0 0 4px var(--rojo);
+}
+
+.quiz-opcion:hover .quiz-radio-custom {
+  border-color: var(--blanco);
+}
+
+/* Botón RESULTADOS */
+.quiz-btn {
+  background: var(--negro);
+  color: var(--blanco);
+  border: none;
+  border-radius: 32px;
+  padding: 14px 32px;
+  font-family: var(--fuente-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  align-self: center;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 8px;
+}
+
+.quiz-btn:hover {
+  background: #2a2a2a;
+  transform: translateY(-2px);
+}
+
+.quiz-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Kanji decorativo a la derecha ── */
+.quiz-kanji-deco {
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 900;
+  color: var(--rojo);
+  line-height: 1.1;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 6px;
+  align-self: center;
+  margin-left: -8px;
+  flex-shrink: 0;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* ── Resultado ── */
+.quiz-resultado {
+  position: relative;
+  z-index: 1;
+  margin: 28px auto 0;
+  max-width: 480px;
+  background: var(--beige);
+  border-radius: 16px;
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.quiz-resultado p {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--negro);
+}
+
+/* ── DESKTOP (1024px+) ── */
+@media (min-width: 1024px) {
+  .quiz-main {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 0;
+    padding-bottom: 80px;
+    align-items: start;
+  }
+
+  /* Bonsai abajo-izquierda */
+  .quiz-bonsai-bg {
+    left: 40px;
+    width: 40%;
+    max-width: 480px;
+  }
+
+  /* Título alineado izquierda */
+  .quiz-header {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+    padding: 48px 0 24px 60px;
+    align-self: start;
+  }
+
+  /* Card centrada en columna derecha */
+  .quiz-centro {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    justify-content: flex-start;
+    padding: 48px 60px 0 40px;
+    align-items: flex-start;
+  }
+
+  .quiz-card {
+    max-width: 400px;
+  }
+
+  /* Resultado bajo el título */
+  .quiz-resultado {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0 0 0 60px;
+    max-width: 300px;
+  }
+
+  .quiz-kanji-titulo {
+    font-size: 88px;
+  }
+
+  .quiz-kanji-deco {
+    font-size: 42px;
+    margin-left: -12px;
+  }
+}
+
+/* ── TABLET (640px) ── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .quiz-header {
+    text-align: center;
+  }
+
+  .quiz-card {
+    max-width: 420px;
+  }
+}
