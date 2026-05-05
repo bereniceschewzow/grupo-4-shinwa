@@ -2,42 +2,176 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mitos y relatos - Shinwa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz mitológico - Shinwa</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-    <header>
-        <img src="img/weblogo.png"alt="Shinwa logo" width="200">
-    </header>
-<section id="quiz">
+<body>
 
-  <h2>Quiz mitológico</h2>
+<header>
+    <a href="index.html">
+        <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="dioses.html">Dioses principales</a></li>
+            <li><a href="criaturas.html">Criaturas míticas</a></li>
+            <li><a href="mitos.html">Mitos y relatos</a></li>
+            <li><a href="mapa.html">Mapa mitológico</a></li>
+            <li><a href="quiz.html">Quiz mitológico</a></li>
+        </ul>
+    </nav>
+    <menu>
+        <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.svg" alt="Buscar"></a></li>
+        <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.svg" alt="Usuario"></a></li>
+        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.svg" alt="Menú"></button></li>
+    </menu>
+</header>
 
-  <form>
+<main class="quiz-main">
 
-    <p>1. ¿Quién es la diosa del sol?</p>
-    <input type="radio" name="q1" value="amaterasu"> Amaterasu<br>
-    <input type="radio" name="q1" value="susanoo"> Susanoo<br>
+    <!-- Bonsai decorativo de fondo -->
+    <div class="quiz-bonsai-bg" aria-hidden="true">
+        <img src="img/bonsai.png" alt="">
+    </div>
 
-    <p>2. ¿Qué criatura es un zorro mágico?</p>
-    <input type="radio" name="q2" value="tengu"> Tengu<br>
-    <input type="radio" name="q2" value="kitsune"> Kitsune<br>
+    <!-- Título -->
+    <div class="quiz-header">
+        <h1 class="quiz-kanji-titulo">神話クイズ</h1>
+        <p class="quiz-subtitulo">[QUIZ MITOLOGICO]</p>
+    </div>
 
-    <p>3. ¿Dónde viven los dioses?</p>
-    <input type="radio" name="q3" value="yomi"> Yomi<br>
-    <input type="radio" name="q3" value="takamagahara"> Takamagahara<br>
+    <!-- Bloque central: card + kanji decorativo derecha -->
+    <div class="quiz-centro">
 
-    <br>
-    <button>Enviar respuestas</button>
+        <!-- Card roja con el formulario -->
+        <div class="quiz-card">
+            <form class="quiz-form" id="quizForm" novalidate>
 
-  </form>
+                <div class="quiz-pregunta">
+                    <p class="quiz-pregunta-texto">¿Quién es la diosa del sol?</p>
+                    <label class="quiz-opcion">
+                        <input type="radio" name="q1" value="amaterasu">
+                        <span class="quiz-radio-custom"></span>
+                        Amaterasu
+                    </label>
+                    <label class="quiz-opcion">
+                        <input type="radio" name="q1" value="susanoo">
+                        <span class="quiz-radio-custom"></span>
+                        Susanoo
+                    </label>
+                </div>
 
-</section>
+                <div class="quiz-pregunta">
+                    <p class="quiz-pregunta-texto">¿Qué criatura es un zorro mágico?</p>
+                    <label class="quiz-opcion">
+                        <input type="radio" name="q2" value="tengu">
+                        <span class="quiz-radio-custom"></span>
+                        Tengu
+                    </label>
+                    <label class="quiz-opcion">
+                        <input type="radio" name="q2" value="kitsune">
+                        <span class="quiz-radio-custom"></span>
+                        Kitsune
+                    </label>
+                </div>
+
+                <div class="quiz-pregunta">
+                    <p class="quiz-pregunta-texto">¿Dónde viven los dioses?</p>
+                    <label class="quiz-opcion">
+                        <input type="radio" name="q3" value="yomi">
+                        <span class="quiz-radio-custom"></span>
+                        Yomi
+                    </label>
+                    <label class="quiz-opcion">
+                        <input type="radio" name="q3" value="takamagahara">
+                        <span class="quiz-radio-custom"></span>
+                        Takamagahara
+                    </label>
+                </div>
+
+                <button type="submit" class="quiz-btn">RESULTADOS</button>
+
+            </form>
+        </div>
+
+        <!-- Kanji decorativo a la derecha -->
+        <span class="quiz-kanji-deco" aria-hidden="true">ア<br>イ<br>ウ<br>神話<br>中<br>キ</span>
+
+    </div>
+
+    <!-- Resultado oculto hasta enviar -->
+    <div class="quiz-resultado" id="quizResultado" hidden>
+        <p></p>
+    </div>
+
+</main>
 
 <footer>
-  <p><a href="index.html"> Volver al inicio</a></p>
- <ul>
-    <li>Aviso Legal | </li>
-    <li>Política de cookies |</li> 
-    <li>Términos y condiciones</li>
+    <ul class="footer-redes">
+        <li><a href="#" aria-label="Instagram"><img src="img/icono-instagram.svg" alt="Instagram"></a></li>
+        <li><a href="#" aria-label="Facebook"><img src="img/icono-facebook.svg" alt="Facebook"></a></li>
+        <li><a href="#" aria-label="YouTube"><img src="img/icono-youtube.svg" alt="YouTube"></a></li>
+    </ul>
+    <div class="footer-cuerpo">
+        <div class="footer-info">
+            <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
+            <p>Una enciclopedia digital dedicada a la mitología japonesa, donde se ofrece una mirada clara y accesible la riqueza cultural y espiritual de Japón.</p>
+            <nav>
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#">Origen del mundo</a></li>
+                    <li><a href="#">Leyendas de Kitsune</a></li>
+                    <li><a href="#">Espíritus y demonios</a></li>
+                    <li><a href="#">Personajes destacados</a></li>
+                    <li><a href="#">Curiosidades</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-acerca">
+            <section>
+                <h4>Acerca de</h4>
+                <p>Esta página fue creada con el objetivo de acercar sus historias, dioses y criaturas a todo tipo de público. Este espacio busca informar y despertar la curiosidad por un mundo lleno de simbolismo y misterio.</p>
+            </section>
+            <img src="img/bonsai.png" alt="Bonsai decorativo" class="footer-bonsai">
+        </div>
+    </div>
+    <ul class="footer-legal">
+        <li><a href="#">Aviso Legal</a></li>
+        <li><a href="#">Política de cookies</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
     </ul>
 </footer>
+
+<script>
+    const correctas = { q1: 'amaterasu', q2: 'kitsune', q3: 'takamagahara' };
+
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let aciertos = 0;
+        const total = Object.keys(correctas).length;
+
+        for (const [pregunta, respuesta] of Object.entries(correctas)) {
+            const seleccion = this.elements[pregunta]?.value;
+            if (seleccion === respuesta) aciertos++;
+        }
+
+        const resultado = document.getElementById('quizResultado');
+        const mensajes = [
+            'Sigue explorando la mitología japonesa ',
+            `¡Bien! Acertaste ${aciertos} de ${total}.`,
+            `¡Excelente! Eres un verdadero conocedor de la mitología japonesa `
+        ];
+        const idx = aciertos === total ? 2 : aciertos >= 1 ? 1 : 0;
+        resultado.querySelector('p').textContent = `${aciertos}/${total} — ${mensajes[idx]}`;
+        resultado.hidden = false;
+        resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+</script>
+
+</body>
+</html>
