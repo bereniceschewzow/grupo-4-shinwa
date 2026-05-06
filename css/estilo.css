@@ -1,4 +1,3 @@
-
 :root {
   --rojo:       #8B1A1A;
   --negro:      #111111;
@@ -16,7 +15,6 @@
 @media (min-width: 1280px) { :root { --ph: 80px; } }
 
 
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; }
 body  { font-family: var(--sans); background: var(--blanco); color: var(--negro); line-height: 1.6; font-size: 15px; }
@@ -26,8 +24,7 @@ a     { text-decoration: none; color: inherit; }
 
 
 
-
-/* Títulos de página (h1 interior) */
+/* Títulos de página */
 .page-titulo {
   font-size: clamp(28px, 7vw, 52px);
   font-weight: 700;
@@ -61,7 +58,6 @@ a     { text-decoration: none; color: inherit; }
 }
 
 
-
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
@@ -69,7 +65,6 @@ input:focus-visible {
   outline-offset: 3px;
   border-radius: 3px;
 }
-
 
 
 header {
@@ -128,7 +123,7 @@ footer { background: var(--beige); color: var(--negro); }
 .footer-redes a:hover    { opacity: 1; }
 .footer-redes img        { width: 22px; height: 22px; filter: brightness(0) invert(1); }
 
-
+/* cuerpo */
 .footer-cuerpo {
   display: flex; flex-direction: column; gap: 32px;
   padding: 32px var(--ph) 0;
@@ -237,7 +232,7 @@ footer section p          { max-width: 340px; }
 .seccion-mitos article p  { font-size: 12px; color: var(--gris); line-height: 1.7; }
 
 /* ── Mapa index ── */
-.seccion-mapa > img       { width: 50%; max-width: 200px; border: 2px solid var(--rojo); border-radius: var(--radio); margin: 24px 0; }
+.seccion-mapa > img       { width: 100%; max-width: 400px; border: 2px solid var(--rojo); border-radius: var(--radio); margin: 24px 0; }
 .seccion-mapa article     { margin-bottom: 16px; }
 .seccion-mapa article h3  { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
 .seccion-mapa article p   { font-size: 13px; color: var(--gris); }
@@ -272,9 +267,9 @@ footer section p          { max-width: 340px; }
   .seccion-quiz a            { max-width: 800px; margin: 0 auto; }
 }
 
-/* ══════════════════════════════════════════════
-   PÁGINA DIOSES — dioses.html
-   ══════════════════════════════════════════════ */
+
+
+
 .dioses-intro             { text-align: center; padding: 48px var(--ph) 32px; max-width: var(--max); margin: 0 auto; }
 .dioses-intro h1          { font-size: clamp(32px,7vw,56px); font-weight: 700; margin-bottom: 16px; line-height: 1.1; }
 .dioses-intro p           { font-size: 14px; color: var(--gris); line-height: 1.7; max-width: 520px; margin: 0 auto; }
@@ -293,9 +288,8 @@ footer section p          { max-width: 340px; }
 .dios-texto               { display: flex; flex-direction: column; gap: 10px; }
 .dios-texto p             { font-size: 13px; color: var(--gris); line-height: 1.75; }
 
-/* ══════════════════════════════════════════════
-   PÁGINA CRIATURAS — criaturas.html
-   ══════════════════════════════════════════════ */
+
+
 .criaturas-intro          { padding: 40px var(--ph) 16px; max-width: var(--max); margin: 0 auto; }
 .criaturas-intro h1       { font-size: clamp(32px,7vw,56px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; }
 .criaturas-intro p        { font-size: 13px; color: var(--gris); line-height: 1.7; max-width: 480px; }
@@ -336,9 +330,10 @@ footer section p          { max-width: 340px; }
   .criatura-texto         { padding-top: 20px; width: 100%; }
 }
 
-/* ══════════════════════════════════════════════
-   PÁGINA MAPA — mapa.html
-   ══════════════════════════════════════════════ */
+
+
+
+
 .mapa-main                { position: relative; padding: 0 0 64px; max-width: var(--max); margin: 0 auto; }
 .mapa-titulo              { font-size: clamp(28px,7vw,52px); font-weight: 700; line-height: 1.1; padding: 40px var(--ph) 32px; }
 
@@ -374,9 +369,9 @@ footer section p          { max-width: 340px; }
   .mapa-kanji-roma        { font-size: 9px; }
 }
 
-/* ══════════════════════════════════════════════
-   PÁGINA MITOS — mitos.html
-   ══════════════════════════════════════════════ */
+
+
+
 .mitos-main               { padding: 0 0 80px; max-width: var(--max); margin: 0 auto; overflow: hidden; }
 .mitos-titulo             { font-size: clamp(28px,7vw,52px); font-weight: 700; line-height: 1.1; padding: 40px var(--ph) 40px; text-align: left; }
 
@@ -419,9 +414,9 @@ footer section p          { max-width: 340px; }
   .mito-card--invertida .mito-kanji { font-size: 18px; letter-spacing: 6px; }
 }
 
-/* ══════════════════════════════════════════════
-   PÁGINA QUIZ — quiz.html
-   ══════════════════════════════════════════════ */
+
+
+
 .quiz-main                { position: relative; overflow: hidden; padding-bottom: 100px; min-height: 90vh; }
 
 /* bonsai fondo */
