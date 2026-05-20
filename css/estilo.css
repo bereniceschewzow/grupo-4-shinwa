@@ -1,3 +1,11 @@
+/* =============================================
+   SHINWA — Mitología Japonesa
+   CSS Responsive — Mobile First — Refactorizado
+   ============================================= */
+
+/* ══════════════════════════════════════════════
+   VARIABLES
+   ══════════════════════════════════════════════ */
 :root {
   --rojo:       #8B1A1A;
   --negro:      #111111;
@@ -14,7 +22,9 @@
 @media (min-width: 1024px) { :root { --ph: 60px; } }
 @media (min-width: 1280px) { :root { --ph: 80px; } }
 
-
+/* ══════════════════════════════════════════════
+   RESET + BASE
+   ══════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; }
 body  { font-family: var(--sans); background: var(--blanco); color: var(--negro); line-height: 1.6; font-size: 15px; }
@@ -22,9 +32,11 @@ img   { display: block; max-width: 100%; height: auto; }
 ul    { list-style: none; }
 a     { text-decoration: none; color: inherit; }
 
+/* ══════════════════════════════════════════════
+   TIPOGRAFÍA COMPARTIDA
+   ══════════════════════════════════════════════ */
 
-
-/* Títulos de página */
+/* Títulos de página (h1 interior) */
 .page-titulo {
   font-size: clamp(28px, 7vw, 52px);
   font-weight: 700;
@@ -57,7 +69,9 @@ a     { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 
-
+/* ══════════════════════════════════════════════
+   ACCESIBILIDAD
+   ══════════════════════════════════════════════ */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
@@ -66,7 +80,9 @@ input:focus-visible {
   border-radius: 3px;
 }
 
-
+/* ══════════════════════════════════════════════
+   HEADER
+   ══════════════════════════════════════════════ */
 header {
   position: sticky; top: 0; z-index: 100;
   background: var(--blanco);
@@ -110,8 +126,9 @@ header menu button,
   .btn-menu { display: none; }
 }
 
-
-
+/* ══════════════════════════════════════════════
+   FOOTER  (compartido por todas las páginas)
+   ══════════════════════════════════════════════ */
 footer { background: var(--beige); color: var(--negro); }
 
 /* barra roja de redes */
@@ -158,9 +175,9 @@ footer section p          { max-width: 340px; }
 .footer-legal li a        { font-size: 11px; color: var(--gris); transition: color .2s; }
 .footer-legal li a:hover  { color: var(--negro); }
 
-
-
-
+/* ══════════════════════════════════════════════
+   INDEX — HERO
+   ══════════════════════════════════════════════ */
 .hero                     { position: relative; overflow: hidden; background: var(--blanco); }
 .hero > img               { width: 100%; height: 70vw; max-height: 520px; object-fit: cover; object-position: center top; }
 .hero > p {
@@ -196,9 +213,9 @@ footer section p          { max-width: 340px; }
   .hero::after            { content: ''; display: table; clear: both; }
 }
 
-
-
-
+/* ══════════════════════════════════════════════
+   INDEX — SECCIONES COMPARTIDAS (dioses/criaturas/mitos/mapa)
+   ══════════════════════════════════════════════ */
 .seccion-dioses,
 .seccion-criaturas,
 .seccion-mitos,
@@ -267,9 +284,9 @@ footer section p          { max-width: 340px; }
   .seccion-quiz a            { max-width: 800px; margin: 0 auto; }
 }
 
-
-
-
+/* ══════════════════════════════════════════════
+   PÁGINA DIOSES — dioses.html
+   ══════════════════════════════════════════════ */
 .dioses-intro             { text-align: center; padding: 48px var(--ph) 32px; max-width: var(--max); margin: 0 auto; }
 .dioses-intro h1          { font-size: clamp(32px,7vw,56px); font-weight: 700; margin-bottom: 16px; line-height: 1.1; }
 .dioses-intro p           { font-size: 14px; color: var(--gris); line-height: 1.7; max-width: 520px; margin: 0 auto; }
@@ -288,8 +305,9 @@ footer section p          { max-width: 340px; }
 .dios-texto               { display: flex; flex-direction: column; gap: 10px; }
 .dios-texto p             { font-size: 13px; color: var(--gris); line-height: 1.75; }
 
-
-
+/* ══════════════════════════════════════════════
+   PÁGINA CRIATURAS — criaturas.html
+   ══════════════════════════════════════════════ */
 .criaturas-intro          { padding: 40px var(--ph) 16px; max-width: var(--max); margin: 0 auto; }
 .criaturas-intro h1       { font-size: clamp(32px,7vw,56px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; }
 .criaturas-intro p        { font-size: 13px; color: var(--gris); line-height: 1.7; max-width: 480px; }
@@ -330,10 +348,9 @@ footer section p          { max-width: 340px; }
   .criatura-texto         { padding-top: 20px; width: 100%; }
 }
 
-
-
-
-
+/* ══════════════════════════════════════════════
+   PÁGINA MAPA — mapa.html
+   ══════════════════════════════════════════════ */
 .mapa-main                { position: relative; padding: 0 0 64px; max-width: var(--max); margin: 0 auto; }
 .mapa-titulo              { font-size: clamp(28px,7vw,52px); font-weight: 700; line-height: 1.1; padding: 40px var(--ph) 32px; }
 
@@ -369,54 +386,62 @@ footer section p          { max-width: 340px; }
   .mapa-kanji-roma        { font-size: 9px; }
 }
 
-
-
-
-.mitos-main               { padding: 0 0 80px; max-width: var(--max); margin: 0 auto; overflow: hidden; }
+/* ══════════════════════════════════════════════
+   PÁGINA MITOS — mitos.html
+   ══════════════════════════════════════════════ */
+.mitos-main               { padding: 0 0 80px; max-width: var(--max); margin: 0 auto; overflow-x: hidden; }
 .mitos-titulo             { font-size: clamp(28px,7vw,52px); font-weight: 700; line-height: 1.1; padding: 40px var(--ph) 40px; text-align: left; }
+.mitos-grid               { display: flex; flex-direction: column; gap: 48px; padding: 0 var(--ph); }
 
-.mitos-grid               { display: flex; flex-direction: column; gap: 56px; padding: 0 var(--ph); }
+/* ── MOBILE: kanji lateral + card en columna ──
+   La card NO usa margin negativo — la imagen queda dentro de la card
+   con un padding-top para que "salga" visualmente hacia arriba          */
+.mito-card                { display: flex; flex-direction: row; align-items: flex-start; gap: 8px; }
 
-/* card: kanji izq + inner roja */
-.mito-card                { position: relative; display: flex; flex-direction: row; align-items: stretch; }
-.mito-kanji               { writing-mode: vertical-rl; font-size: clamp(14px,3.5vw,20px); font-weight: 700; letter-spacing: 4px; line-height: 1; flex-shrink: 0; align-self: flex-start; padding: 4px 6px 0 0; white-space: nowrap; }
-.mito-card--invertida .mito-kanji { order: 2; padding: 4px 0 0 6px; align-self: flex-end; }
+/* kanji vertical a la izquierda */
+.mito-kanji               { writing-mode: vertical-rl; font-size: 16px; font-weight: 700; letter-spacing: 4px; line-height: 1; flex-shrink: 0; align-self: flex-start; padding-top: 4px; color: var(--negro); white-space: nowrap; }
 
-.mito-inner               { position: relative; flex: 1; display: flex; flex-direction: row; align-items: center; background: var(--rojo); border-radius: 20px; overflow: visible; min-height: 280px; }
-.mito-card--invertida .mito-inner { flex-direction: row-reverse; }
+/* card invertida: kanji va a la derecha */
+.mito-card--invertida     { flex-direction: row-reverse; }
+.mito-card--invertida .mito-kanji { align-self: flex-end; }
 
-.mito-circulo             { width: 200px; height: 200px; border-radius: 50%; background: var(--beige); overflow: hidden; flex-shrink: 0; position: relative; z-index: 2; margin-left: -60px; box-shadow: 0 4px 20px rgba(0,0,0,.2); }
-.mito-card--invertida .mito-circulo { margin-left: 0; margin-right: -60px; }
-.mito-circulo img         { width: 100%; height: 100%; object-fit: cover; }
+/* caja roja — en mobile es columna: círculo arriba solapando, texto abajo */
+.mito-inner               { flex: 1; background: var(--rojo); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
 
-.mito-contenido           { flex: 1; padding: 28px 28px 28px 20px; display: flex; flex-direction: column; gap: 12px; text-align: right; }
-.mito-card--invertida .mito-contenido { text-align: left; padding: 28px 20px 28px 28px; }
-.mito-nombre              { font-size: clamp(16px,4vw,22px); font-weight: 700; color: var(--blanco); line-height: 1.2; margin-bottom: 4px; }
-.mito-contenido p         { font-size: 12px; color: rgba(255,255,255,.92); line-height: 1.7; }
+/* círculo: ocupa todo el ancho de la card en mobile, altura fija */
+.mito-circulo             { width: 100%; aspect-ratio: 1; border-radius: 0; overflow: hidden; flex-shrink: 0; }
+.mito-circulo img         { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-@media (min-width: 640px) {
-  .mito-circulo           { width: 240px; height: 240px; margin-left: -70px; }
-  .mito-card--invertida .mito-circulo { margin-left: 0; margin-right: -70px; }
-  .mito-contenido p       { font-size: 13px; }
-  .mitos-grid             { gap: 64px; }
-}
+/* contenido texto — mismo padding, sin text-align asimétrico */
+.mito-contenido           { padding: 24px 24px 28px; display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.mito-nombre              { font-size: clamp(18px,4vw,22px); font-weight: 700; color: var(--blanco); line-height: 1.2; }
+.mito-contenido p         { font-size: 13px; color: rgba(255,255,255,.92); line-height: 1.7; }
+
+/* ── DESKTOP (1024px+):
+   2 columnas, círculo a la izquierda/derecha solapando
+   Ahora sí usamos margin negativo porque hay espacio de sobra  */
 @media (min-width: 1024px) {
   .mitos-titulo           { text-align: center; padding: 56px 60px 48px; }
   .mitos-grid             { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 0 60px; align-items: start; }
-  .mito-inner             { min-height: 340px; }
-  .mito-circulo           { width: 220px; height: 220px; margin-left: -65px; }
-  .mito-card--invertida .mito-circulo { margin-left: 0; margin-right: -65px; }
-  .mito-contenido         { padding: 32px 32px 32px 20px; gap: 14px; }
-  .mito-card--invertida .mito-contenido { padding: 32px 20px 32px 32px; }
-  .mito-nombre            { font-size: 22px; }
+  .mito-kanji             { font-size: 18px; letter-spacing: 6px; }
+
+  /* inner vuelve a ser fila en desktop */
+  .mito-inner             { flex-direction: row; align-items: center; min-height: 320px; overflow: visible; }
+  .mito-card--invertida .mito-inner { flex-direction: row-reverse; }
+
+  /* círculo redondo sobresaliendo por la izquierda */
+  .mito-circulo           { width: 200px; height: 200px; border-radius: 50%; flex-shrink: 0; margin-left: -50px; box-shadow: 0 4px 20px rgba(0,0,0,.2); aspect-ratio: unset; }
+  .mito-card--invertida .mito-circulo { margin-left: 0; margin-right: -50px; }
+
+  /* texto alineado a la derecha en card normal, izquierda en invertida */
+  .mito-contenido         { padding: 28px 28px 28px 16px; text-align: right; }
+  .mito-card--invertida .mito-contenido { padding: 28px 16px 28px 28px; text-align: left; }
   .mito-contenido p       { font-size: 13px; }
-  .mito-kanji,
-  .mito-card--invertida .mito-kanji { font-size: 18px; letter-spacing: 6px; }
 }
 
-
-
-
+/* ══════════════════════════════════════════════
+   PÁGINA QUIZ — quiz.html
+   ══════════════════════════════════════════════ */
 .quiz-main                { position: relative; overflow: hidden; padding-bottom: 100px; min-height: 90vh; }
 
 /* bonsai fondo */
