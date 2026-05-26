@@ -126,6 +126,67 @@ header menu button,
   .btn-menu { display: none; }
 }
 
+/* ── Menú mobile desplegable ── */
+header nav.nav-abierta {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 57px; left: 0; right: 0;
+  background: var(--blanco);
+  padding: 24px var(--ph) 32px;
+  border-bottom: 2px solid var(--rojo);
+  z-index: 99;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  animation: slideDown .25s ease;
+}
+header nav.nav-abierta ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+header nav.nav-abierta ul li a {
+  display: block;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  transition: color .2s, padding-left .2s;
+}
+header nav.nav-abierta ul li:last-child a { border-bottom: none; }
+header nav.nav-abierta ul li a:hover { color: var(--rojo); padding-left: 8px; }
+
+/* bloquear scroll body cuando menú abierto */
+body.menu-abierto { overflow: hidden; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header con sombra al scrollear ── */
+header.scrolled {
+  box-shadow: 0 2px 16px rgba(0,0,0,.1);
+  transition: box-shadow .3s ease;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* delay escalonado para grids */
+.seccion-dioses li:nth-child(2), .dios-card:nth-child(2),
+.seccion-criaturas li:nth-child(2), .criatura-card:nth-child(2) { transition-delay: .1s; }
+.seccion-dioses li:nth-child(3), .dios-card:nth-child(3),
+.seccion-criaturas li:nth-child(3), .criatura-card:nth-child(3) { transition-delay: .2s; }
+.seccion-dioses li:nth-child(4), .dios-card:nth-child(4),
+.seccion-criaturas li:nth-child(4), .criatura-card:nth-child(4) { transition-delay: .3s; }
+
 /* ══════════════════════════════════════════════
    FOOTER  (compartido por todas las páginas)
    ══════════════════════════════════════════════ */
