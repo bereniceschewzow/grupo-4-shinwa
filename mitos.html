@@ -28,7 +28,9 @@
     <menu>
         <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.png" alt="Buscar"></a></li>
         <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.png" alt="Usuario"></a></li>
-        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.png" alt="Menú"></button></li>
+        <li><button class="btn-menu" aria-label="Abrir menú" aria-expanded="false">
+            <img src="img/icono-menu.png" alt="Menú">
+        </button></li>
     </menu>
 </header>
 
@@ -38,7 +40,6 @@
 
     <div class="mitos-grid">
 
-        <!-- Card 1: Susanoo — imagen sale por la izquierda -->
         <article class="mito-card">
             <span class="mito-kanji" aria-hidden="true">イザナナミ</span>
             <div class="mito-inner">
@@ -54,7 +55,6 @@
             </div>
         </article>
 
-        <!-- Card 2: Izanagi — imagen sale por la derecha -->
         <article class="mito-card mito-card--invertida">
             <div class="mito-inner">
                 <div class="mito-contenido">
@@ -87,9 +87,9 @@
             <nav>
                 <h4>Explorar</h4>
                 <ul>
-                    <li><a href="#">Mitos y relatos</a></li>
-                    <li><a href="criaturas.html">Criaturas míticas</a></li>
                     <li><a href="dioses.html">Dioses principales</a></li>
+                    <li><a href="criaturas.html">Criaturas míticas</a></li>
+                    <li><a href="#">Mitos y relatos</a></li>
                     <li><a href="mapa.html">Mapa</a></li>
                     <li><a href="quiz.html">Quiz</a></li>
                 </ul>
@@ -110,5 +110,6 @@
     </ul>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
