@@ -28,22 +28,21 @@
     <menu>
         <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.png" alt="Buscar"></a></li>
         <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.png" alt="Usuario"></a></li>
-        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.png" alt="Menú"></button></li>
+        <li><button class="btn-menu" aria-label="Abrir menú" aria-expanded="false">
+            <img src="img/icono-menu.png" alt="Menú">
+        </button></li>
     </menu>
 </header>
 
 <main>
 
-    <!-- Título de sección -->
     <section class="criaturas-intro">
         <h1>Criaturas míticas</h1>
         <p>En la mitología japonesa existen numerosas criaturas fantásticas que habitan bosques, ríos, montañas y otros mundos espirituales.</p>
     </section>
 
-    <!-- Grid de criaturas -->
     <section class="criaturas-lista">
 
-        <!-- Kitsune -->
         <article class="criatura-card">
             <div class="criatura-visual">
                 <span class="criatura-nombre">[Kitsune]</span>
@@ -58,7 +57,6 @@
             </div>
         </article>
 
-        <!-- Kappa -->
         <article class="criatura-card">
             <div class="criatura-visual">
                 <span class="criatura-nombre">[Kappa]</span>
@@ -73,14 +71,13 @@
             </div>
         </article>
 
-        <!-- Tengu -->
         <article class="criatura-card">
             <div class="criatura-visual">
                 <span class="criatura-nombre">[Tengu]</span>
                 <div class="criatura-circulo">
                     <img src="img/tengu.png" alt="Tengu">
                 </div>
-                <span class="criatura-kanji" aria-hidden="true">韻</span>
+                <span class="criatura-kanji" aria-hidden="true">天狗</span>
             </div>
             <div class="criatura-texto">
                 <p>Los tengu son criaturas espirituales que habitan en montañas y bosques, y suelen representarse como seres humanoides con rasgos de ave, como alas, garras o una nariz anormalmente larga.</p>
@@ -88,14 +85,13 @@
             </div>
         </article>
 
-        <!-- Ryū -->
         <article class="criatura-card">
             <div class="criatura-visual">
                 <span class="criatura-nombre">[Ryū]</span>
                 <div class="criatura-circulo">
                     <img src="img/ryu.png" alt="Ryū">
                 </div>
-                <span class="criatura-kanji" aria-hidden="true">天狗</span>
+                <span class="criatura-kanji" aria-hidden="true">龍</span>
             </div>
             <div class="criatura-texto">
                 <p>El ryū es el dragón japonés, una criatura poderosa asociada principalmente al agua, como ríos, mares y lluvias. A diferencia de los dragones occidentales, que suelen ser destructivos, el ryū es generalmente benevolente, sabio y protector.</p>
@@ -120,8 +116,8 @@
             <nav>
                 <h4>Explorar</h4>
                 <ul>
-                    <li><a href="#">Criaturas</a></li>
                     <li><a href="dioses.html">Dioses principales</a></li>
+                    <li><a href="#">Criaturas míticas</a></li>
                     <li><a href="mitos.html">Mitos y relatos</a></li>
                     <li><a href="mapa.html">Mapa</a></li>
                     <li><a href="quiz.html">Quiz</a></li>
@@ -143,5 +139,6 @@
     </ul>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
