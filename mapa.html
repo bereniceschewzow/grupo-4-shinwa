@@ -28,19 +28,18 @@
     <menu>
         <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.png" alt="Buscar"></a></li>
         <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.png" alt="Usuario"></a></li>
-        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.png" alt="Menú"></button></li>
+        <li><button class="btn-menu" aria-label="Abrir menú" aria-expanded="false">
+            <img src="img/icono-menu.png" alt="Menú">
+        </button></li>
     </menu>
 </header>
 
 <main class="mapa-main">
 
-    <!-- Título -->
     <h1 class="mapa-titulo">Mapa mitologico</h1>
 
-    <!-- Bloque superior: imagen del mapa + texto introductorio -->
     <div class="mapa-superior">
 
-        <!-- Imagen del mapa con kanji vertical superpuesto -->
         <div class="mapa-imagen-wrap">
             <div class="mapa-imagen-marco">
                 <img src="img/mapa.png" alt="Mapa mitológico japonés">
@@ -61,7 +60,6 @@
             </div>
         </div>
 
-        <!-- Texto introductorio -->
         <div class="mapa-intro-texto">
             <p>En la mitología japonesa, el universo no se concibe como un espacio único y homogéneo, sino como una serie de planos superpuestos que dialogan entre sí. Cada uno de estos territorios posee su propia lógica, sus habitantes y una carga simbólica particular. Más que lugares físicos, son estados de existencia que organizan la relación entre los dioses, los humanos y la muerte.</p>
             <p>Este mapa no solo describe espacios, sino también tensiones: entre pureza e impureza, entre luz y oscuridad, entre lo eterno y lo efímero. Recorrerlo es, en cierto modo, comprender cómo los japoneses antiguos pensaban el mundo y su lugar dentro de él.</p>
@@ -69,7 +67,6 @@
 
     </div>
 
-    <!-- Lista de lugares -->
     <div class="mapa-lugares">
 
         <div class="mapa-lugar">
@@ -124,10 +121,10 @@
             <nav>
                 <h4>Explorar</h4>
                 <ul>
-                    <li><a href="#">Mapa Mitológico</a></li>
+                    <li><a href="dioses.html">Dioses principales</a></li>
                     <li><a href="criaturas.html">Criaturas míticas</a></li>
                     <li><a href="mitos.html">Mitos y relatos</a></li>
-                    <li><a href="dioses.html">Dioses principales</a></li>
+                    <li><a href="#">Mapa mitológico</a></li>
                     <li><a href="quiz.html">Quiz</a></li>
                 </ul>
             </nav>
@@ -147,5 +144,6 @@
     </ul>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
