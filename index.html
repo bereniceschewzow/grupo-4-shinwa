@@ -28,18 +28,21 @@
     <menu>
         <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.png" alt="Buscar"></a></li>
         <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.png" alt="Usuario"></a></li>
-        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.png" alt="Menú"></button></li>
+        <li><button class="btn-menu" aria-label="Abrir menú" aria-expanded="false">
+            <img src="img/icono-menu.png" alt="Menú">
+        </button></li>
     </menu>
 </header>
 
 <main>
 
+    <!-- ── HERO ── -->
     <section class="hero">
         <img src="img/home.png" alt="Imagen principal mitología japonesa">
         <p>Dioses, espíritus y criaturas que habitan entre la naturaleza y lo invisible.</p>
         <search>
             <label for="buscador">Explora el mundo de la mitología japonesa</label>
-            <input type="search" id="buscador" name="buscador">
+            <input type="search" id="buscador" name="buscador" placeholder="">
         </search>
         <aside>
             <h2>Introducción a la mitología japonesa</h2>
@@ -49,8 +52,9 @@
         </aside>
     </section>
 
+    <!-- ── DIOSES ── -->
     <section class="seccion-dioses">
-        <h2><a href="dioses.html">Dioses principales</a></h2>
+        <h2 class="seccion-titulo"><a href="dioses.html">Dioses principales</a></h2>
         <p>Los dioses principales de la mitología japonesa, conocidos como kami, representan fuerzas de la naturaleza y aspectos fundamentales de la vida.</p>
         <ul>
             <li>
@@ -76,8 +80,9 @@
         </ul>
     </section>
 
+    <!-- ── CRIATURAS ── -->
     <section class="seccion-criaturas">
-        <h2><a href="criaturas.html">Criaturas míticas</a></h2>
+        <h2 class="seccion-titulo"><a href="criaturas.html">Criaturas míticas</a></h2>
         <ul>
             <li>
                 <img src="img/kitsune.png" alt="Kitsune">
@@ -102,26 +107,28 @@
         </ul>
     </section>
 
+    <!-- ── MITOS ── -->
     <section class="seccion-mitos">
-        <h2><a href="mitos.html">Mitos y relatos</a></h2>
+        <h2 class="seccion-titulo"><a href="mitos.html">Mitos y relatos</a></h2>
         <article>
             <img src="img/izanagi izanaki.png" alt="Izanagi e Izanami">
-            <div class="mito-texto">
+            <div>
                 <h3>Izanagi - Izanami</h3>
                 <p>Izanagi y Izanami crearon las islas de Japón y muchos dioses. Izanami murió al dar a luz al dios del fuego y fue al inframundo Yomi. Izanagi intentó traerla de regreso, pero al verla transformada por la muerte escapó. Al purificarse después del viaje nacieron nuevos dioses, entre ellos Amaterasu.</p>
             </div>
         </article>
         <article>
             <img src="img/susanoo serpiente.png" alt="Susanoo y la serpiente">
-            <div class="mito-texto">
+            <div>
                 <h3>Susanoo y la serpiente</h3>
                 <p>El dios de las tormentas Susanoo salvó a una joven de la serpiente gigante Yamata no Orochi. Para vencerla, la emborrachó con sake y luego la derrotó con su espada. Dentro del cuerpo del monstruo encontró una espada sagrada que se convirtió en un tesoro legendario de Japón.</p>
             </div>
         </article>
     </section>
 
+    <!-- ── MAPA ── -->
     <section class="seccion-mapa">
-        <h2><a href="mapa.html">Mapa mitológico</a></h2>
+        <h2 class="seccion-titulo"><a href="mapa.html">Mapa mitológico</a></h2>
         <img src="img/mapa.png" alt="Mapa mitológico japonés">
         <article>
             <h3>Takamagahara</h3>
@@ -137,6 +144,7 @@
         </article>
     </section>
 
+    <!-- ── QUIZ BANNER ── -->
     <section class="seccion-quiz">
         <a href="quiz.html">
             <p class="quiz-kanji">神話クイズ</p>
@@ -152,7 +160,7 @@
         <li><a href="#" aria-label="Facebook"><img src="img/icono-facebook.svg" alt="Facebook"></a></li>
         <li><a href="#" aria-label="YouTube"><img src="img/icono-youtube.svg" alt="YouTube"></a></li>
     </ul>
-  <div class="footer-cuerpo">
+    <div class="footer-cuerpo">
         <div class="footer-info">
             <img src="img/weblogo.png" alt="Shinwa logo" class="logo">
             <p>Una enciclopedia digital dedicada a la mitología japonesa, donde se ofrece una mirada clara y accesible la riqueza cultural y espiritual de Japón.</p>
@@ -175,7 +183,6 @@
             <img src="img/bonsai 2.png" alt="Bonsai decorativo" class="footer-bonsai">
         </div>
     </div>
-
     <ul class="footer-legal">
         <li><a href="#">Aviso Legal</a></li>
         <li><a href="#">Política de cookies</a></li>
@@ -183,5 +190,6 @@
     </ul>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
