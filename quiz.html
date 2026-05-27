@@ -28,27 +28,25 @@
     <menu>
         <li><a href="#" aria-label="Buscar"><img src="img/icono-lupa.png" alt="Buscar"></a></li>
         <li><a href="#" aria-label="Usuario"><img src="img/icono-usuario.png" alt="Usuario"></a></li>
-        <li><button class="btn-menu" aria-label="Abrir menú"><img src="img/icono-menu.png" alt="Menú"></button></li>
+        <li><button class="btn-menu" aria-label="Abrir menú" aria-expanded="false">
+            <img src="img/icono-menu.png" alt="Menú">
+        </button></li>
     </menu>
 </header>
 
 <main class="quiz-main">
 
-    <!-- Bonsai decorativo de fondo -->
     <div class="quiz-bonsai-bg" aria-hidden="true">
         <img src="img/bonsai.png" alt="">
     </div>
 
-    <!-- Título -->
     <div class="quiz-header">
         <h1 class="quiz-kanji-titulo">神話クイズ</h1>
         <p class="quiz-subtitulo">[QUIZ MITOLOGICO]</p>
     </div>
 
-    <!-- Bloque central: card + kanji decorativo derecha -->
     <div class="quiz-centro">
 
-        <!-- Card roja con el formulario -->
         <div class="quiz-card">
             <form class="quiz-form" id="quizForm" novalidate>
 
@@ -99,12 +97,10 @@
             </form>
         </div>
 
-        <!-- Kanji decorativo a la derecha -->
-        <span class="kanji-deco" aria-hidden="true">アイウ神話中キ</span>
+        <span class="quiz-kanji-deco" aria-hidden="true">ア<br>イ<br>ウ<br>神<br>話<br>中<br>キ</span>
 
     </div>
 
-    <!-- Resultado oculto hasta enviar -->
     <div class="quiz-resultado" id="quizResultado" hidden>
         <p></p>
     </div>
@@ -128,7 +124,7 @@
                     <li><a href="criaturas.html">Criaturas míticas</a></li>
                     <li><a href="mitos.html">Mitos y relatos</a></li>
                     <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href=#">Quiz</a></li>
+                    <li><a href="#">Quiz</a></li>
                 </ul>
             </nav>
         </div>
@@ -147,6 +143,7 @@
     </ul>
 </footer>
 
+<script src="js/main.js"></script>
 <script>
     const correctas = { q1: 'amaterasu', q2: 'kitsune', q3: 'takamagahara' };
 
@@ -162,9 +159,9 @@
 
         const resultado = document.getElementById('quizResultado');
         const mensajes = [
-            'Sigue explorando la mitología japonesa ',
+            'Sigue explorando la mitología japonesa 🌸',
             `¡Bien! Acertaste ${aciertos} de ${total}.`,
-            `¡Excelente! Eres un verdadero conocedor de la mitología japonesa `
+            `¡Excelente! Eres un verdadero conocedor de la mitología japonesa 🎌`
         ];
         const idx = aciertos === total ? 2 : aciertos >= 1 ? 1 : 0;
         resultado.querySelector('p').textContent = `${aciertos}/${total} — ${mensajes[idx]}`;
