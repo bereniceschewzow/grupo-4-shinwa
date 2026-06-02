@@ -184,13 +184,4 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
   });
 
-  /* ══════════════════════════════════════════
-     BUSCADOR
-     ══════════════════════════════════════════ */
-  const buscador = document.querySelector('#buscador');
-  if (buscador) {
-    buscador.addEventListener('focus', () => buscador.closest('search')?.classList.add('activo'));
-    buscador.addEventListener('blur',  () => buscador.closest('search')?.classList.remove('activo'));
-  }
-
 });
