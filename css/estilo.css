@@ -348,65 +348,75 @@ footer section p          { max-width: 340px; }
 /* ══════════════════════════════════════════════
    PÁGINA DIOSES — dioses.html
    ══════════════════════════════════════════════ */
-.dioses-intro             { text-align: center; padding: 48px var(--ph) 32px; max-width: var(--max); margin: 0 auto; }
-.dioses-intro h1          { font-size: clamp(32px,7vw,56px); font-weight: 700; margin-bottom: 16px; line-height: 1.1; }
-.dioses-intro p           { font-size: 14px; color: var(--gris); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+.dioses-intro             { text-align: left; padding: 40px var(--ph) 24px; max-width: var(--max); margin: 0 auto; }
+.dioses-intro h1          { font-size: clamp(28px,7vw,56px); font-weight: 700; margin-bottom: 10px; line-height: 1.1; }
+.dioses-intro p           { font-size: 13px; color: var(--gris); line-height: 1.7; max-width: 480px; }
 
-.dioses-lista             { display: grid; grid-template-columns: 1fr; gap: 40px 24px; padding: 16px var(--ph) 64px; max-width: var(--max); margin: 0 auto; }
-@media (min-width: 600px)  { .dioses-lista { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1024px) { .dioses-lista { grid-template-columns: repeat(4,1fr); gap: 32px 24px; padding: 16px 60px 80px; } }
-
-.dios-card                { display: flex; flex-direction: column; gap: 20px; }
+/* mobile: carrusel */
+.dioses-lista             { position: relative; padding: 16px 0 16px; overflow: hidden; }
+.dioses-track             { display: flex; transition: transform .4s ease; will-change: transform; }
+.dios-card                { flex: 0 0 82vw; max-width: 340px; margin-right: 16px; display: flex; flex-direction: column; gap: 0; padding-left: var(--ph); }
+.dios-card:last-child     { margin-right: var(--ph); }
 .dios-imagen-wrap         { display: flex; flex-direction: row; align-items: flex-start; gap: 6px; width: 100%; }
-.dios-imagen-marco        { position: relative; flex: 1; border: 2px solid var(--rojo); border-radius: 4px; overflow: hidden; background: var(--negro); }
-.dios-imagen-marco img    { width: 100%; aspect-ratio: 1; object-fit: cover; opacity: .9; transition: opacity .3s; }
+.dios-imagen-marco        { position: relative; flex: 1; border: 2px solid var(--rojo); border-radius: 8px; overflow: hidden; background: var(--negro); }
+.dios-imagen-marco img    { width: 100%; aspect-ratio: 3/4; object-fit: cover; opacity: .92; transition: opacity .3s; display: block; }
 .dios-imagen-marco:hover img { opacity: 1; }
 .dios-nombre              { position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,.92); font-size: 11px; font-weight: 600; padding: 4px 10px; border: 1px solid rgba(0,0,0,.12); border-radius: 2px; z-index: 2; white-space: nowrap; letter-spacing: .4px; }
-.dios-kanji               { writing-mode: vertical-rl; font-size: clamp(24px,3vw,38px); font-weight: 700; color: var(--negro); opacity: .75; letter-spacing: 2px; line-height: 1; flex-shrink: 0; align-self: flex-start; padding-top: 2px; }
-.dios-texto               { display: flex; flex-direction: column; gap: 10px; }
+.dios-kanji               { writing-mode: vertical-rl; font-size: clamp(24px,5vw,38px); font-weight: 700; color: var(--negro); opacity: .75; letter-spacing: 2px; line-height: 1; flex-shrink: 0; align-self: flex-start; padding-top: 2px; }
+.dios-texto               { display: flex; flex-direction: column; gap: 10px; padding: 16px 0 0; }
 .dios-texto p             { font-size: 13px; color: var(--gris); line-height: 1.75; }
+
+/* puntos de navegación compartidos */
+.carrusel-dots            { display: flex; justify-content: center; gap: 8px; padding: 20px 0 40px; }
+.carrusel-dots button     { width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(0,0,0,.2); cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
+.carrusel-dots button.activo { background: var(--rojo); transform: scale(1.2); }
+
+@media (min-width: 1024px) {
+  .dioses-intro           { text-align: center; padding: 56px var(--ph) 32px; }
+  .dioses-intro p         { margin: 0 auto; max-width: 520px; font-size: 14px; }
+  .dioses-lista           { overflow: visible; padding: 0 60px 80px; max-width: var(--max); margin: 0 auto; }
+  .dioses-track           { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px 24px; transform: none !important; transition: none; }
+  .dios-card              { flex: unset; max-width: unset; margin-right: 0; padding-left: 0; }
+  .dios-imagen-marco img  { aspect-ratio: 1; }
+  .carrusel-dots          { display: none; }
+}
 
 /* ══════════════════════════════════════════════
    PÁGINA CRIATURAS — criaturas.html
    ══════════════════════════════════════════════ */
 .criaturas-intro          { padding: 40px var(--ph) 16px; max-width: var(--max); margin: 0 auto; }
-.criaturas-intro h1       { font-size: clamp(32px,7vw,56px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; }
+.criaturas-intro h1       { font-size: clamp(28px,7vw,56px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; }
 .criaturas-intro p        { font-size: 13px; color: var(--gris); line-height: 1.7; max-width: 480px; }
 
-.criaturas-lista          { display: flex; flex-direction: column; gap: 48px; padding: 24px var(--ph) 64px; max-width: var(--max); margin: 0 auto; }
+/* mobile: carrusel — 2 slides visibles */
+.criaturas-lista          { position: relative; padding: 24px 0 0; overflow: hidden; }
+.criaturas-track          { display: flex; transition: transform .4s ease; will-change: transform; }
 
-/* mobile: card = fila visual izq + texto der */
-.criatura-card            { display: grid; grid-template-columns: 200px 1fr; align-items: start; gap: 24px; position: relative; }
-.criatura-visual          { position: relative; width: 200px; flex-shrink: 0; }
-.criatura-nombre          { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; padding-left: 4px; }
-.criatura-circulo         { width: 160px; height: 160px; border-radius: 50%; background: var(--beige); overflow: hidden; position: relative; z-index: 1; }
+/* cada card ocupa ~48vw para que entren 2 visibles */
+.criatura-card            { flex: 0 0 48vw; max-width: 240px; margin-right: 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding-left: var(--ph); position: relative; }
+.criatura-card:last-child { margin-right: var(--ph); }
+
+.criatura-visual          { position: relative; width: 100%; }
+.criatura-nombre          { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.criatura-circulo         { width: 100%; aspect-ratio: 1; border-radius: 50%; background: var(--beige); overflow: hidden; position: relative; z-index: 1; }
 .criatura-circulo img     { width: 100%; height: 100%; object-fit: cover; }
-.criatura-kanji           { position: absolute; bottom: -10px; left: -8px; font-size: clamp(52px,12vw,80px); font-weight: 900; color: var(--rojo); line-height: 1; z-index: 2; pointer-events: none; letter-spacing: -2px; }
-.criatura-texto           { display: flex; flex-direction: column; gap: 10px; padding-top: 28px; }
-.criatura-texto p         { font-size: 13px; color: var(--gris); line-height: 1.75; }
-
-/* tablet: 2 columnas apiladas */
-@media (min-width: 640px) and (max-width: 1023px) {
-  .criaturas-lista        { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 32px; }
-  .criatura-card          { grid-template-columns: 1fr; display: flex; flex-direction: column; gap: 16px; }
-  .criatura-visual        { width: 100%; }
-  .criatura-circulo       { width: 160px; height: 160px; }
-  .criatura-kanji         { font-size: 64px; }
-  .criatura-texto         { padding-top: 8px; }
-}
+.criatura-kanji           { position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); font-size: clamp(44px,10vw,72px); font-weight: 900; color: var(--rojo); line-height: 1; z-index: 2; pointer-events: none; white-space: nowrap; }
+.criatura-texto           { display: flex; flex-direction: column; gap: 8px; padding-top: 20px; }
+.criatura-texto p         { font-size: 12px; color: var(--gris); line-height: 1.7; }
 
 /* desktop: 4 columnas */
 @media (min-width: 1024px) {
   .criaturas-intro        { text-align: center; padding: 56px var(--ph) 24px; }
   .criaturas-intro p      { margin: 0 auto; }
-  .criaturas-lista        { display: grid; grid-template-columns: repeat(4,1fr); gap: 0 32px; padding: 40px 60px 80px; align-items: start; }
-  .criatura-card          { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; position: relative; }
-  .criatura-visual        { width: 100%; }
-  .criatura-nombre        { font-size: 15px; margin-bottom: 8px; }
-  .criatura-circulo       { width: 100%; height: 0; padding-bottom: 100%; position: relative; }
+  .criaturas-lista        { overflow: visible; padding: 40px 60px 80px; max-width: var(--max); margin: 0 auto; }
+  .criaturas-track        { display: grid; grid-template-columns: repeat(4,1fr); gap: 0 32px; transform: none !important; transition: none; }
+  .criatura-card          { flex: unset; max-width: unset; margin-right: 0; padding-left: 0; }
+  .criatura-circulo       { width: 100%; height: 0; padding-bottom: 100%; position: relative; aspect-ratio: unset; }
   .criatura-circulo img   { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .criatura-kanji         { font-size: clamp(64px,8vw,110px); bottom: -16px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-  .criatura-texto         { padding-top: 20px; width: 100%; }
+  .criatura-kanji         { font-size: clamp(64px,8vw,110px); bottom: -16px; }
+  .criatura-nombre        { font-size: 15px; }
+  .criatura-texto         { padding-top: 24px; width: 100%; }
+  .carrusel-dots          { display: none; }
 }
 
 /* ══════════════════════════════════════════════
