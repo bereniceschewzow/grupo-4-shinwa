@@ -378,6 +378,7 @@ footer section p          { max-width: 340px; }
   .dioses-track           { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px 24px; transform: none !important; transition: none; }
   .dios-card              { flex: unset; max-width: unset; margin-right: 0; padding-left: 0; }
   .dios-imagen-marco img  { aspect-ratio: 3/4; }
+  .dios-imagen-marco      { aspect-ratio: 3/4; }
   .carrusel-dots          { display: none; }
 }
 
