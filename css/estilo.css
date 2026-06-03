@@ -358,8 +358,8 @@ footer section p          { max-width: 340px; }
 .dios-card                { flex: 0 0 82vw; max-width: 340px; margin-right: 16px; display: flex; flex-direction: column; gap: 0; padding-left: var(--ph); }
 .dios-card:last-child     { margin-right: var(--ph); }
 .dios-imagen-wrap         { display: flex; flex-direction: row; align-items: flex-start; gap: 6px; width: 100%; }
-.dios-imagen-marco        { position: relative; flex: 1; border: 2px solid var(--rojo); border-radius: 8px; overflow: hidden; background: var(--negro); height: 100% }
-.dios-imagen-marco img { width: 100%; height: 100%; object-fit: cover; opacity: .92; transition: opacity .3s; display: block; }
+.dios-imagen-marco        { position: relative; flex: 1; border: 2px solid var(--rojo); border-radius: 8px; overflow: hidden; background: var(--negro); }
+.dios-imagen-marco img    { width: 100%; aspect-ratio: 3/4; object-fit: cover; opacity: .92; transition: opacity .3s; display: block; }
 .dios-imagen-marco:hover img { opacity: 1; }
 .dios-nombre              { position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,.92); font-size: 11px; font-weight: 600; padding: 4px 10px; border: 1px solid rgba(0,0,0,.12); border-radius: 2px; z-index: 2; white-space: nowrap; letter-spacing: .4px; }
 .dios-kanji               { writing-mode: vertical-rl; font-size: clamp(24px,5vw,38px); font-weight: 700; color: var(--negro); opacity: .75; letter-spacing: 2px; line-height: 1; flex-shrink: 0; align-self: flex-start; padding-top: 2px; }
@@ -377,8 +377,7 @@ footer section p          { max-width: 340px; }
   .dioses-lista           { overflow: visible; padding: 0 60px 80px; max-width: var(--max); margin: 0 auto; }
   .dioses-track           { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px 24px; transform: none !important; transition: none; }
   .dios-card              { flex: unset; max-width: unset; margin-right: 0; padding-left: 0; }
-  .dios-imagen-marco img  { aspect-ratio: 3/4; }
-  .dios-imagen-marco      { aspect-ratio: 3/4; }
+  .dios-imagen-marco img  { aspect-ratio: 1; }
   .carrusel-dots          { display: none; }
 }
 
